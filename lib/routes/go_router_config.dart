@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:haker_ball/src/feature/rituals/presentation/home_screen.dart';
 import 'package:haker_ball/src/feature/rituals/presentation/achievement_screen.dart';
-import 'package:haker_ball/src/feature/rituals/presentation/answer_screen.dart';
 import 'package:haker_ball/src/feature/rituals/presentation/article_screen.dart';
 import 'package:haker_ball/src/feature/rituals/presentation/articles_screen.dart';
 import 'package:haker_ball/src/feature/rituals/presentation/game_screen.dart';
 import 'package:haker_ball/src/feature/rituals/presentation/home_screen.dart';
 import 'package:haker_ball/src/feature/rituals/presentation/initial_screen.dart';
-import 'package:haker_ball/src/feature/rituals/utils/game_logic.dart';
 
 import '../src/feature/rituals/model/article.dart';
 import '../src/feature/splash/presentation/screens/splash_screen.dart';
@@ -49,26 +47,13 @@ GoRouter buildGoRouter = GoRouter(
                   path: RouteValue.select.path,
                   builder: (BuildContext context, GoRouterState state) {
                     final extra = state.extra! as Map<String, dynamic>;
-                    return InitialScreen(
-              
-                        stage: extra['stage'] as int);
+                    return InitialScreen();
                   },
                 ),
                 GoRoute(
                   path: RouteValue.game.path,
                   builder: (BuildContext context, GoRouterState state) {
-              
-                    return GameScreen(level: extra);
-                  },
-                ),
-                GoRoute(
-                  path: RouteValue.answer.path,
-                  builder: (BuildContext context, GoRouterState state) {
-                    final extra = state.extra! as Map<String, dynamic>;
-                    return AnswerScreen(
-                      circles: extra['circles'] as List<CircleData>,
-                      difficulty: extra['level'] as DifficultyLevel,
-                    );
+                    return GameScreen();
                   },
                 ),
               ],

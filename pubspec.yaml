@@ -34,3 +34,14 @@ flutter:
     - assets/images/
     - assets/fonts/
     - assets/json/
+  fonts:
+    - family: AV Fontimer
+      fonts:
+        - asset: assets/fonts/AV Fontimer.ttf
+          weight: 400
+    - family: UNCAGE
+      fonts:
+        - asset: assets/fonts/Uncage Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Uncage Bold.ttf
+          weight: 600
