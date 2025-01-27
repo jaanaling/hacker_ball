@@ -1,0 +1,213 @@
+[
+    {
+      "id": 1,
+      "score": null,
+      "lore": "You are the neon sphere called Hacker-Ball, drifting through the steel-and-glass canyons of Netropolis. The city is under tight corporate lockdown, with data firewalls at every corner. A masked informant tells you about a hidden vulnerability in the Central Server. To begin your infiltration, you must retrieve the passkey to the UnderNet. Your first clue arrives scrambled, challenging your cryptographic skills.",
+      "word": "NEON",
+      "hint": "Decrypt 'QHRQ' with a Caesar cipher shifting letters by 3 backwards."
+    },
+    {
+      "id": 2,
+      "score": null,
+      "lore": "Having passed the first security gate, you roll deeper into the UnderNet. Flickering holograms reveal a labyrinth of access tunnels used by rogue coders. You sense a second gateway sealed by a layered firewall. The local deckers share rumors of a single keyword that can bypass the lock. You spot another encrypted message etched on the neon walls.",
+      "word": "LINK",
+      "hint": "Use the Atbash cipher to decode 'ORMP' and reveal the word."
+    },
+    {
+      "id": 3,
+      "score": null,
+      "lore": "You slip through a dim corridor, noticing traces of corporate data-hunters on your tail. Glowing graffiti hints at a major console hidden behind a quantum lock. To power it up, you need the central command code. Your digital instincts warn you of heightened firewall sensitivity ahead. Another cipher stands between you and the next passage.",
+      "word": "CORE",
+      "hint": "Decrypt 'PBER' using ROT13 (shift letters by 13)."
+    },
+    {
+      "id": 4,
+      "score": null,
+      "lore": "An ominous hum resonates through the server room as you approach an antique mainframe. Its black-metal casing is laced with corporate insignia from decades past. The system demands a biometric passphrase, but you discover a fallback code scrawled on an old blueprint. This code is encrypted to deter casual snoopers. You sense the solution lies in a well-known shift cipher.",
+      "word": "BIOS",
+      "hint": "Decrypt 'ELRV' with a Caesar cipher shifting letters by 3 backwards."
+    },
+    {
+      "id": 5,
+      "score": null,
+      "lore": "With the mainframe compromised, you gain partial access to an internal network node. A swirl of corrupted data suggests someone else is manipulating the streams. You spot a fragmented antivirus routine locked behind a puzzling encryption. Time is critical, as the system’s alarms are on a short fuse. To proceed, you must extract the correct key word from the garbled text.",
+      "word": "NODE",
+      "hint": "Decode the Base64 string 'TU9ERQ==' to find the word."
+    },
+    {
+      "id": 6,
+      "score": null,
+      "lore": "You delve into the deeper layers of the corporate net, guided by a faint digital beacon. Firewalls multiply, each more complex than the last. A rogue AI patrolling these corridors dispatches malicious code in your direction. You realize a hidden backdoor can be unlocked by a single passphrase. Its letters are camouflaged by another shift-based cipher.",
+      "word": "TRACE",
+      "hint": "The text 'ECART' is simply reversed. Reverse it to find the word."
+    },
+    {
+      "id": 7,
+      "score": null,
+      "lore": "Sparks of raw data dance around you as you breach the perimeter of a restricted subnet. Digital footprints suggest a covert group of hacktivists once tried to sabotage this place. Their leftover graffiti references a vital code to bypass a stealth proxy. You must decode it quickly to avoid the system’s tracer programs. The encryption again appears to be a classic shift method.",
+      "word": "PROXY",
+      "hint": "Translate '.--. .-. --- -..- -.--' from Morse code to find the word."
+    },
+    {
+      "id": 8,
+      "score": null,
+      "lore": "Entering a derelict node cluster, you spot the faint echo of lost infiltration attempts. Walls of shifting data reveal ghostly trails left by prior hackers. The core interface demands a single phrase to override its hidden watchdog subroutine. You discover an encrypted tag scribbled in luminous paint on the console. A quick analysis confirms it's another shifted puzzle.",
+      "word": "GHOST",
+      "hint": "Decrypt 'JKRVW' with a Caesar cipher shifting letters by 3 backwards."
+    },
+    {
+      "id": 9,
+      "score": null,
+      "lore": "A swirl of static crackles through your sensors as you cross into an abandoned dev-zone. Phantom processes flicker on and off, remnants of old software expansions. You locate a locked door requiring an ancient passcode known only to the original system architects. Shards of code appear on a damaged screen, scrambled by a common cipher. Solve it to gain safe passage.",
+      "word": "CODEC",
+      "hint": "Convert '43 4F 44 45 43' from hexadecimal to ASCII."
+    },
+    {
+      "id": 10,
+      "score": null,
+      "lore": "Beyond the dev-zone, you find a heavy quarantine barrier blocking access to a secure lab. Toxic data streams swirl behind it, sealed off by emergency protocols. A half-fried keypad flickers, prompting for an override code. You recall a rumor that a stealth team once discovered its cipher technique. Their leftover note points to a shifted encryption.",
+      "word": "CRACK",
+      "hint": "Use the Vigenere cipher with the key 'ICE' to decode 'KTEKM'."
+    },
+    {
+      "id": 11,
+      "score": null,
+      "lore": "Slipping into the lab, you see flurries of raw data feeding a massive analytics engine. The swirling graphs project patterns of hidden signals across the entire city. You suspect the corporate overseers are tracing every connection in real time. An embedded console demands the next passphrase to continue. The console’s interface yields yet another coded fragment using a shifting method.",
+      "word": "SHIFT",
+      "hint": "Convert the 8-bit binary codes '01010011 01001000 01001001 01000110 01010100' to letters."
+    },
+    {
+      "id": 12,
+      "score": null,
+      "lore": "Deeper inside, you discover a chamber teeming with repurposed server racks. Their cables pulse like neon veins, pumping data across the city’s underbelly. A coded lock guards the system logs that might reveal the location of a hidden power core. The method used here is a heavier shift cipher, stronger than the earlier ones. You must decode it before the system’s drones converge on you.",
+      "word": "SIGNAL",
+      "hint": "Decrypt 'SGAINL' using a 2-Rail Fence Cipher by splitting letters into two diagonal rows."
+    },
+    {
+      "id": 13,
+      "score": null,
+      "lore": "A hush falls over the corridor as the lights flicker ominously. You realize the Central AI has likely pinpointed your intrusion. Ahead, a thick firewall scrawls the word ‘UNAUTHORIZED’ in blood-red text. An old tinker’s note indicates the gate’s passkey is locked behind ROT13 encryption. Only by deciphering it can you slip past the sentinel scripts.",
+      "word": "ROGUE",
+      "hint": "Decrypt 'ebthr' using ROT13 (shift letters by 13)."
+    },
+    {
+      "id": 14,
+      "score": null,
+      "lore": "Cool air brushes against your metallic surface as you reach a hidden maintenance shaft. The overhead lights buzz, revealing old wires and battered control panels. A battered sign warns that only mirrored encryption can open the next checkpoint. Your system scans identify a possible Atbash code. You quickly focus on decrypting the swirling text displayed nearby.",
+      "word": "MIRROR",
+      "hint": "Use the Atbash cipher (A->Z, B->Y, etc.) to decode 'nriili'."
+    },
+    {
+      "id": 15,
+      "score": null,
+      "lore": "Slipping through the checkpoint, you find an abandoned workshop brimming with contraband tech. A flickering terminal on the far side still hums with faint power. It demands an encrypted passphrase rumored to be locked behind a Vigenere method. You recall the key might relate to sub-zero ice. With the puzzle in hand, you prepare to decode the cipher quickly.",
+      "word": "GATE",
+      "hint": "Use the Vigenere cipher with the key 'ICE' to decode 'ocxm'."
+    },
+    {
+      "id": 16,
+      "score": null,
+      "lore": "Beyond the workshop lies an eerie data vault, its holographic guardian scanning for intruders. You slip past security protocols, noticing a file labeled ‘Restricted: GYRO Systems’. The file is base64-encoded, a popular method for hiding raw strings. You must decode it to glean information on the next target. The code gleams on the terminal, beckoning you to decrypt it.",
+      "word": "GYRO",
+      "hint": "Decode the Base64 string 'R1lSTw==' to find the word."
+    },
+    {
+      "id": 17,
+      "score": null,
+      "lore": "A swirling torrent of data leads you into a quarantined sector bristling with antivirus drones. The central console winks ominously with the word ‘VIRUS’ locked behind hex code. In the hush of glowing LED strips, you realize the needed instructions are hidden in pure hexadecimal. The overhead clock ticks down, urging you to act fast. Decoding it will open the path to the system’s next layer.",
+      "word": "VIRUS",
+      "hint": "Convert the ASCII hex values '56 49 52 55 53' to letters."
+    },
+    {
+      "id": 18,
+      "score": null,
+      "lore": "With the antivirus drones diverted, you spot a swirling gateway marked ‘Virtual Vortex.’ The swirling bits appear reversed, an echo of previous infiltration attempts. Your sensors detect a strong encryption shielding the gateway, but it seems suspiciously simple. A reversed text puzzle stands in your path. Carefully restoring the correct order should reveal the password.",
+      "word": "VORTEX",
+      "hint": "The text 'xetrov' is simply reversed. Reverse it to find the word."
+    },
+    {
+      "id": 19,
+      "score": null,
+      "lore": "Venturing into the swirling gateway, you find a corridor lined with corporate propaganda. Glimpses of top-secret experiments on digital consciousness flicker in the distance. A sealed security door stands in your path, apparently locked by a random shift cipher. The word you need is known as the alpha command for hidden test labs. You brace yourself for yet another manual decryption.",
+      "word": "OMEGA",
+      "hint": "Decrypt 'casuo' with a Caesar cipher shifting letters by 14 backwards."
+    },
+    {
+      "id": 20,
+      "score": null,
+      "lore": "A wave of sizzling sparks erupts around you as a new firewall system boots up. You discern a pattern resembling swirling fractals, likely a signature of advanced corporate encryption. Rumor has it that this system’s passkey is locked with a Vigenere cipher keyed to futuristic tech. Only by cracking it can you move on to the central data archives. You scan the environment for any signs of the missing code.",
+      "word": "KERNEL",
+      "hint": "Use the Vigenere cipher with the key 'TECH' to decode 'dituxp'."
+    },
+    {
+      "id": 21,
+      "score": null,
+      "lore": "You weave through the labyrinthine archive, glimpsing fragments of data experiments on the edges of your vision. A corridor labeled ‘PIXEL Exchange’ glows softly in bright neon. Its security lock pulses with Morse code signals that echo throughout the hall. The correct transcription promises a path forward. You steel yourself to interpret the dots and dashes in time.",
+      "word": "PIXEL",
+      "hint": "Each letter is in Morse code. Translate '.--. .. -..- . .-..' to find the word."
+    },
+    {
+      "id": 22,
+      "score": null,
+      "lore": "Reaching a high-security gate, you hear mechanical clicks as an army of drones starts to awaken. The console by the lock displays a base64-encoded fragment labeled ‘DRONE Key.’ Time is short, and each second brings more active drones. You know that only by rapidly decoding the cipher can you proceed. Your systems hum as you tackle the base64 challenge head-on.",
+      "word": "DRONE",
+      "hint": "Decode the Base64 string 'RFJPTkU=' to find the word."
+    },
+    {
+      "id": 23,
+      "score": null,
+      "lore": "Gliding past the half-awakened drones, you find a hidden control panel granting deeper system access. Jagged lines of text coil like serpents around the word ‘CYBER.’ This puzzle employs yet another shift cipher, more complex than the last. You feel the system’s defenses intensifying with every passing moment. Decrypting this clue is your only chance to slip further into the core.",
+      "word": "CYBER",
+      "hint": "Decrypt 'rnqtc' with a Caesar cipher shifting letters by 15 backwards."
+    },
+    {
+      "id": 24,
+      "score": null,
+      "lore": "You pass into a shadowy corridor lined with black ice that shimmers in the fluorescent gloom. A terminal labeled ‘AXIOM Security’ crackles with arcs of digital energy. You detect an Atbash encryption on the terminal’s surface text. Only by flipping each letter can you reveal the passphrase. The humming intensifies as you prepare to crack the code.",
+      "word": "AXIOM",
+      "hint": "Use the Atbash cipher to decode 'zcrln'."
+    },
+    {
+      "id": 25,
+      "score": null,
+      "lore": "A steep descent takes you into a cavernous data well where old net legends speak of a monstrous security daemon. Its logs reference something called a ‘HARPY Protocol,’ rumored to devour intruders. The code to disable it is locked behind a Vigenere puzzle keyed to net infiltration. You sense the encryption is fiercely guarded by subroutines. Only the correct passphrase stands between you and certain defeat.",
+      "word": "HARPY",
+      "hint": "Use the Vigenere cipher with the key 'NET' to decode 'uekcc'."
+    },
+    {
+      "id": 26,
+      "score": null,
+      "lore": "Slipping through the daemon’s lair, you discover a reinforced chamber shining with futuristic design. The door panel reads ‘ZENITH Access Only,’ protected by hex-coded security. You see the cipher on the main console, mocking your attempt to proceed. The solution lies in converting the hex data to letters. Only then can you continue your ascent toward the final barrier.",
+      "word": "ZENITH",
+      "hint": "Convert '5A 45 4E 49 54 48' from hexadecimal to ASCII."
+    },
+    {
+      "id": 27,
+      "score": null,
+      "lore": "A chorus of clicks echoes behind you as you emerge into a towering server hall. Thousands of blinking lights reveal the final stretch to the Central AI core. A locked barrier labeled ‘REBOOT Protocol’ stands in your way, the instructions embedded in binary code. You must translate them swiftly to avoid the incoming security drones. Victory here promises direct access to the primary system matrix.",
+      "word": "REBOOT",
+      "hint": "Convert each 8-bit binary code to letters: '01010010 01000101 01000010 01001111 01001111 01010100'."
+    },
+    {
+      "id": 28,
+      "score": null,
+      "lore": "You breach the final server hall, confronting a swirling vortex of data known as the Central Core. Strange chanting lines fill the code around you, referencing the old hacker term ‘PHREAK.’ The passkey you need is hidden in a base64-encoded format broadcast across the data streams. Quick decryption is crucial, as the core’s self-defense routines ramp up. With sparks flying, you scramble to solve this final leg.",
+      "word": "PHREAK",
+      "hint": "Decode 'UEhSRUFL' from Base64 to find the word."
+    },
+    {
+      "id": 29,
+      "score": null,
+      "lore": "The Central AI roars to life, flooding your sensors with security overrides. A swirling mass of data tries to seal off your exit, brandishing the word ‘DELTA’ as the final gate. The encryption is another heavy shift cipher requiring immediate decryption. Every second lost risks complete system lockdown. You focus and prepare to break the code before it’s too late.",
+      "word": "DELTA",
+      "hint": "Decrypt 'vwdls' with a Caesar cipher shifting letters by 18 backwards."
+    },
+    {
+      "id": 30,
+      "score": null,
+      "lore": "Your final challenge stands at the heart of the Central AI’s domain, a pulsing lock labeled ‘FREEDOM.’ Streams of data swirl around you, and the city’s future hinges on this moment. A final Atbash cipher stands in your path, defying your every move. Despite the AI’s attempts to override your progress, you refuse to turn back. The city trembles as you prepare to input the final decoded passphrase.",
+      "word": "FREEDOM",
+      "hint": "Use the Atbash cipher to decode 'uivvwln'."
+    }
+  ]
+  

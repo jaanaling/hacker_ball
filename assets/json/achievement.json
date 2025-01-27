@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Newbie No More",
+    "description": "Complete the first level without using any hints.",
+    "reward": 1
+  },
+  {
+    "id": 2,
+    "title": "Careful Thinker",
+    "description": "Use no more than 2 hints across your first 3 levels.",
+    "reward": 1
+  },
+  {
+    "id": 3,
+    "title": "Hint-Happy",
+    "description": "Accumulate a total of 5 hints used in the game.",
+    "reward": 2
+  },
+  {
+    "id": 4,
+    "title": "Steady Mind",
+    "description": "Reach level 5 with fewer than 4 total hints used.",
+    "reward": 2
+  },
+  {
+    "id": 5,
+    "title": "Probing the Net",
+    "description": "Use at least 1 hint on three different levels.",
+    "reward": 3
+  },
+  {
+    "id": 6,
+    "title": "Efficient Solver",
+    "description": "Complete any 3 levels in a row without using a hint.",
+    "reward": 2
+  },
+  {
+    "id": 7,
+    "title": "Curious Coder",
+    "description": "Use 10 hints in total throughout the game.",
+    "reward": 3
+  },
+  {
+    "id": 8,
+    "title": "Minimalist Hacker",
+    "description": "Finish level 10 with fewer than 6 total hints used.",
+    "reward": 4
+  },
+  {
+    "id": 9,
+    "title": "Hint Explorer",
+    "description": "Try every type of hint at least once across any levels.",
+    "reward": 3
+  },
+  {
+    "id": 10,
+    "title": "Speedy Solver",
+    "description": "Complete a level using 0 hints within a short time frame.",
+    "reward": 4
+  },
+  {
+    "id": 11,
+    "title": "Netropolis Navigator",
+    "description": "Finish 15 levels with fewer than 10 total hints used.",
+    "reward": 5
+  },
+  {
+    "id": 12,
+    "title": "Quantum Query",
+    "description": "Use exactly 1 hint on every level from 5 to 10.",
+    "reward": 5
+  },
+  {
+    "id": 13,
+    "title": "Backdoor Breaker",
+    "description": "Complete 5 levels without using any hints at all.",
+    "reward": 4
+  },
+  {
+    "id": 14,
+    "title": "Mentor Mode",
+    "description": "Use 20 hints in total (across all levels).",
+    "reward": 4
+  },
+  {
+    "id": 15,
+    "title": "Hint Mastery",
+    "description": "Complete the entire game with 10 or fewer hints used in total.",
+    "reward": 5
+  }
+]
