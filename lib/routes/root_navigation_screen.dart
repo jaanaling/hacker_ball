@@ -30,7 +30,7 @@ class _RootNavigationScreenState extends State<RootNavigationScreen> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    IconProvider.background.buildImageUrl(),
+                    IconProvider.splash.buildImageUrl(),
                   ),
                   fit: BoxFit.cover,
                 ),

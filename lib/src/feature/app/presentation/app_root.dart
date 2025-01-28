@@ -20,9 +20,10 @@ class AppRoot extends StatelessWidget {
           textTheme: CupertinoTextThemeData(
             textStyle: TextStyle(
               color: Colors.white,
-              fontSize: 22,
-              fontFamily: 'Gunterz',
-              fontWeight: FontWeight.w500,
+              fontSize: 30,
+              fontFamily: 'UNCAGE',
+              fontWeight: FontWeight.w600,
+              letterSpacing: 1.50,
             ),
           ),
         ),

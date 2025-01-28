@@ -55,12 +55,23 @@ class _SplashScreenState extends State<SplashScreen> {
             fit: BoxFit.fitWidth,
           ),
         ),
-        const Positioned(
-          bottom: 51,
-          child: CircularProgressIndicator(
-            color: Color(0xFFFF00FB),
-          ),
-        )
+        Positioned(
+            bottom: getHeight(context, baseSize: 66),
+            child: Column(
+              children: [
+                LoadingAnimation(),
+                Gap(22),
+                SizedBox(
+                  width: width - 32,
+                  child: LinearProgressIndicator(
+                    minHeight: 18,
+                    borderRadius: BorderRadius.circular(29),
+                    color: Color(0xFFFF00EE),
+                    backgroundColor: Color(0xFF1D0037),
+                  ),
+                ),
+              ],
+            )),
       ],
     );
   }
@@ -108,7 +119,10 @@ class _LoadingAnimationState extends State<LoadingAnimation>
         Text(
           'Loading',
           style: TextStyle(
-            fontSize: 24,
+            color: Colors.white,
+            fontSize: 19,
+            fontFamily: 'AV Fontimer',
+            fontWeight: FontWeight.w300,
           ),
         ),
         Gap(3),
@@ -146,7 +160,7 @@ class AnimatedDot extends StatelessWidget {
               width: 4,
               height: 4,
               decoration: BoxDecoration(
-                color: Colors.black,
+                color: Colors.white,
                 shape: BoxShape.circle,
               ),
             ),

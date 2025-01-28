@@ -2,16 +2,12 @@ import 'package:flutter/material.dart';
 
 class AnimatedButton extends StatefulWidget {
   final Widget child;
-  final double width;
-  final double height;
   final VoidCallback onPressed;
 
   const AnimatedButton({
     super.key,
     required this.child,
     required this.onPressed,
-    this.width = 62,
-    this.height = 62,
   });
 
   @override
