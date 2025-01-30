@@ -56,8 +56,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: AppIcon(
                                 asset:
                                     IconProvider.achievements.buildImageUrl(),
-                                width: 63,
-                                height: 63,
+                                width:isIpad(context)?90:63,
+                                fit: BoxFit.fitWidth,
                               ),
                               onPressed: () {
                                 context.push(

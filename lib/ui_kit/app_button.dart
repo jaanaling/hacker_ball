@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:haker_ball/src/core/utils/app_icon.dart';
 import 'package:haker_ball/src/core/utils/icon_provider.dart';
+import 'package:haker_ball/src/core/utils/size_utils.dart';
 import 'package:haker_ball/ui_kit/gradient_text.dart';
 
 import 'animated_button.dart';
@@ -24,16 +25,17 @@ class AppButton extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           AppIcon(
+            width: isIpad(context)?800:null,
             asset: color == ButtonColors.purple
                 ? IconProvider.purpleButton.buildImageUrl()
                 : color == ButtonColors.blue
                     ? IconProvider.blueButton.buildImageUrl()
                     : IconProvider.yellowButton.buildImageUrl(),
+            fit: isIpad(context)?BoxFit.fitWidth:BoxFit.contain,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 36),
             child: FittedBox(
-              fit: BoxFit.scaleDown,
               child: GradientText(
                 title,
                 gradientColor: color == ButtonColors.purple

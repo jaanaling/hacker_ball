@@ -187,14 +187,20 @@ class _QuizScreenState extends State<GameScreen>
                                       AppIcon(
                                         asset:
                                             IconProvider.panel.buildImageUrl(),
-                                        height: isIpad(context) ? 250 : 128,
-                                        width: double.infinity,
+                                        // height: isIpad(context) ? 250 : 128,
+                                        width: isIpad(context) ? 712 : 306,
+                                        fit: BoxFit.fitWidth,
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.all(16.0),
-                                        child: Text(
-                                          riddle.hint,
-                                          style: const TextStyle(fontSize: 20),
+                                        child: SizedBox(
+                                          width: isIpad(context) ? 548 : 274,
+                                          child: Center(
+                                            child: Text(
+                                              riddle.hint,
+                                              style:  TextStyle(fontSize: isIpad(context) ? 40 : 20),
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -258,8 +264,8 @@ class _QuizScreenState extends State<GameScreen>
                               AnimatedButton(
                                 child: AppIcon(
                                   asset: IconProvider.back.buildImageUrl(),
-                                  width: 63,
-                                  height: 63,
+                                  width:isIpad(context)?90:63,
+                                  fit: BoxFit.fitWidth,
                                 ),
                                 onPressed: () {
                                   context.pop();
@@ -322,23 +328,30 @@ class _QuizScreenState extends State<GameScreen>
               : const Color.fromRGBO(211, 38, 38, 1);
         }
 
-        return Stack(
-          alignment: Alignment.center,
-          children: [
-            AppIcon(
-              width: cellWidth,
-              height: cellHeight,
-              asset: IconProvider.answ.buildImageUrl(),
-              color: color,
-              blendMode: BlendMode.srcATop,
-            ),
-            Text(
-              userInput[index] ?? '',
-              style: TextStyle(
-                fontSize: cellWidth * 0.6,
+        return SizedBox(
+
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              AppIcon(
+                width: cellWidth,
+                height: cellHeight,
+                asset: IconProvider.answ.buildImageUrl(),
+                color: color,
+                blendMode: BlendMode.srcATop,
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text(
+                  userInput[index] ?? '',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: cellWidth * 0.6,
+                  ),
+                ),
+              ),
+            ],
+          ),
         );
       });
 

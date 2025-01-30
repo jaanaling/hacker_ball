@@ -4,6 +4,8 @@ import 'package:haker_ball/src/core/utils/icon_provider.dart';
 import 'package:haker_ball/ui_kit/animated_button.dart';
 import 'package:just_audio/just_audio.dart';
 
+import '../src/core/utils/size_utils.dart';
+
 final player = AudioPlayer();
 ValueNotifier<bool> isPlaying = ValueNotifier(true);
 
@@ -36,8 +38,8 @@ class _SoundButtonState extends State<SoundButton> {
             asset: value
                 ? IconProvider.soundon.buildImageUrl()
                 : IconProvider.sound.buildImageUrl(),
-            width: 63,
-            height: 63,
+            width:isIpad(context)?90:63,
+            fit: BoxFit.fitWidth,
           ),
         );
       },

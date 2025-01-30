@@ -10,6 +10,8 @@ import 'package:haker_ball/src/feature/rituals/model/article.dart';
 import 'package:haker_ball/ui_kit/animated_button.dart';
 import 'package:haker_ball/ui_kit/app_button.dart';
 
+import '../../../core/utils/size_utils.dart';
+
 class ArticlesScreen extends StatelessWidget {
   const ArticlesScreen({super.key});
 
@@ -31,8 +33,8 @@ class ArticlesScreen extends StatelessWidget {
                         AnimatedButton(
                           child: AppIcon(
                             asset: IconProvider.back.buildImageUrl(),
-                            width: 63,
-                            height: 63,
+                            width:isIpad(context)?90:63,
+                            fit: BoxFit.fitWidth,
                           ),
                           onPressed: () {
                             context.pop();

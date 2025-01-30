@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:haker_ball/routes/route_value.dart';
 import 'package:haker_ball/src/core/utils/app_icon.dart';
 import 'package:haker_ball/src/core/utils/icon_provider.dart';
+import 'package:haker_ball/src/core/utils/size_utils.dart';
 import 'package:haker_ball/src/feature/rituals/bloc/user_bloc.dart';
 import 'package:haker_ball/ui_kit/animated_button.dart';
 import 'package:haker_ball/ui_kit/app_button.dart';
@@ -32,8 +33,8 @@ class SelectScreen extends StatelessWidget {
                       AnimatedButton(
                           child: AppIcon(
                             asset: IconProvider.back.buildImageUrl(),
-                            width: 63,
-                            height: 63,
+                            width:isIpad(context)?90:63,
+                            fit: BoxFit.fitWidth,
                           ),
                           onPressed: () {
                             context.pop();
@@ -41,8 +42,8 @@ class SelectScreen extends StatelessWidget {
                       AnimatedButton(
                           child: AppIcon(
                             asset: IconProvider.achievements.buildImageUrl(),
-                            width: 63,
-                            height: 63,
+                            width:isIpad(context)?90:63,
+                            fit: BoxFit.fitWidth,
                           ),
                           onPressed: () {
                             context.push(
@@ -82,7 +83,8 @@ class SelectScreen extends StatelessWidget {
                           children: [
                             AppIcon(
                               asset: IconProvider.level.buildImageUrl(),
-                              fit: BoxFit.cover,
+                              width: isIpad(context)?200:100,
+                              fit: BoxFit.fitWidth,
                             ),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,

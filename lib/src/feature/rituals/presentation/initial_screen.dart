@@ -9,6 +9,7 @@ import 'package:go_router/go_router.dart';
 import 'package:haker_ball/routes/route_value.dart';
 import 'package:haker_ball/src/core/utils/app_icon.dart';
 import 'package:haker_ball/src/core/utils/icon_provider.dart';
+import 'package:haker_ball/src/core/utils/size_utils.dart';
 import 'package:haker_ball/src/feature/rituals/bloc/user_bloc.dart';
 import 'package:haker_ball/ui_kit/animated_button.dart';
 import 'package:haker_ball/ui_kit/app_button.dart';
@@ -39,8 +40,8 @@ class InitialScreen extends StatelessWidget {
                           AnimatedButton(
                               child: AppIcon(
                                 asset: IconProvider.back.buildImageUrl(),
-                                width: 63,
-                                height: 63,
+                                width:isIpad(context)?90:63,
+                                fit: BoxFit.fitWidth,
                               ),
                               onPressed: () {
                                 context.pop();
@@ -54,18 +55,20 @@ class InitialScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 400,
-                  width: 343,
+                  height:isIpad(context)?800:400,
+                  width: isIpad(context)?606:343,
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
                       AppIcon(
                         asset: IconProvider.lore.buildImageUrl(),
+                        height:isIpad(context)?800:400,
+                        width: isIpad(context)?686:343,
                         fit: BoxFit.fill,
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 22, vertical: 30),
+                            horizontal: 22, vertical: 0),
                         child: AutoScrollText(
                           text: state.levels[id].lore,
                         ),
@@ -157,7 +160,7 @@ class _AutoScrollTextState extends State<AutoScrollText> {
           padding: EdgeInsets.all(16.0),
           child: Text(
             widget.text,
-            style: TextStyle(fontSize: 24, fontFamily: "AV Fontimer"),
+            style: TextStyle(fontSize: isIpad(context)?40:24, fontFamily: "AV Fontimer"),
             textAlign: TextAlign.center,
           ),
         ),
