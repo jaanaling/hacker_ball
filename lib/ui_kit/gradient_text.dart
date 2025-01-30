@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 class GradientText extends StatelessWidget {
   final bool isCenter;
+  final double fontSize;
   const GradientText(
     this.text, {
     this.isCenter = false,
+    this.fontSize =30,
     super.key,
     required this.gradientColor,
     required this.shaderColor,
@@ -29,7 +31,7 @@ class GradientText extends StatelessWidget {
           text,
           textAlign: isCenter ? TextAlign.center : null,
           style: TextStyle(
-            fontSize: 30,
+            fontSize: fontSize,
             fontFamily: 'UNCAGE',
             fontWeight: FontWeight.w600,
             color: Colors.transparent,
@@ -66,7 +68,7 @@ class GradientText extends StatelessWidget {
             textAlign: isCenter ? TextAlign.center : null,
             style: TextStyle(
               color: gradientColor.first,
-              fontSize: 30,
+              fontSize: fontSize,
               fontFamily: 'UNCAGE',
               fontWeight: FontWeight.w600,
               letterSpacing: 1.50,

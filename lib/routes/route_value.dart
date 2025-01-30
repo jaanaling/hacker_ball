@@ -9,7 +9,7 @@ enum RouteValue {
     path: 'article',
   ),
   articles(
-    path: '/articles',
+    path: 'articles',
   ),
   select(
     path: 'select',
@@ -22,7 +22,7 @@ enum RouteValue {
   ),
 
   achievements(
-    path: '/achievements',
+    path: 'achievements',
   ),
 
   unknown(

@@ -23,8 +23,6 @@ class AppIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context);
-
     return asset.contains('.svg')
         ? Opacity(
             opacity: 0.97,
@@ -49,7 +47,8 @@ class AppIcon extends StatelessWidget {
                 height: height,
                 fit: fit,
                 color: color,
-                colorBlendMode: color != null ? blendMode?? BlendMode.srcIn : null,
+                colorBlendMode:
+                    color != null ? blendMode ?? BlendMode.srcIn : null,
               )
             : Image.file(
                 File(asset),

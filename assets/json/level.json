@@ -208,6 +208,459 @@
       "lore": "Your final challenge stands at the heart of the Central AI’s domain, a pulsing lock labeled ‘FREEDOM.’ Streams of data swirl around you, and the city’s future hinges on this moment. A final Atbash cipher stands in your path, defying your every move. Despite the AI’s attempts to override your progress, you refuse to turn back. The city trembles as you prepare to input the final decoded passphrase.",
       "word": "FREEDOM",
       "hint": "Use the Atbash cipher to decode 'uivvwln'."
+    },
+    {
+      "id": 341,
+      "score": null,
+      "lore": "The final lock clicks open, and a blinding cascade of neon code erupts around you. The Central AI, once an impenetrable force, now lies in fragmented data streams. You have done the impossible—hacked the core of Netropolis. As firewalls collapse, the city’s enslaved systems begin to reboot.\n\nYet, as you roll forward, something feels… off. The decrypted files reveal a hidden subroutine labeled 'Omega Red'—a last-ditch failsafe buried deep within the AI. Before you can react, a countdown timer flashes across the mainframe. The system is preparing to wipe itself clean, erasing every trace of the corruption… and you along with it.",
+      "word": "ERASE",
+      "hint": "Decode the Base64 string 'RVJBU0U=' to find the word."
+    },
+    {
+      "id": 342,
+      "score": null,
+      "lore": "A distant alarm blares through the datascape. The Omega Red protocol is live, locking down all external access points. If the wipe is completed, Netropolis will be free—but at a cost. You will be permanently deleted from the system. There has to be another way.\n\nScanning the rapidly shifting code, you detect a hidden emergency override—an administrator’s escape route. The phrase to unlock it is buried within a corrupted cipher, left behind by a rogue engineer who once tried to rebel against the AI.",
+      "word": "ESCAPE",
+      "hint": "Reverse the letters in 'EPACSE' to find the word."
+    },
+    {
+      "id": 343,
+      "score": null,
+      "lore": "You initiate the escape sequence, but the AI fights back. The system’s defensive protocols surge, attempting to trap you in a recursive data loop. A swirling vortex of failed login attempts and encrypted passcodes materializes around you.\n\nA single, flickering console remains active. It demands a master decryption key—an ancient failsafe, rumored to be the very first access code ever used to enter the network. The remnants of old coders whisper its existence in the depths of the UnderNet.",
+      "word": "ROOT",
+      "hint": "Decrypt 'EBBG' using ROT13 (shift letters by 13)."
+    },
+    {
+      "id": 344,
+      "score": null,
+      "lore": "The command is accepted, and the system stutters. Glitches ripple through the AI’s framework as its control weakens. The Omega Red failsafe is struggling to maintain stability.\n\nBut there’s one last obstacle—a final encryption locking the true core of the network. It’s different from the rest, ancient yet intricate. It doesn’t just control the AI… it controls **everything**. The fate of Netropolis is in your hands. Decrypt the last phrase, and you decide: shut down the AI permanently, or rewrite its purpose.",
+      "word": "REWRITE",
+      "hint": "Decrypt 'UJVKVG' with a Caesar cipher shifting letters by 2 backwards."
+    },
+    {
+      "id": 345,
+      "score": null,
+      "lore": "With the final phrase inputted, the system trembles. The Central AI’s functions are rewritten, its rogue algorithms purged. The neon skyline of Netropolis flickers, then stabilizes. The people… they are free.\n\nAs you roll out of the digital core, you see a final message left behind by the original system architect. It’s a warning, or perhaps an invitation. The words glow faintly on the mainframe’s last surviving panel before it shuts down forever.",
+      "word": "LEGACY",
+      "hint": "Convert '4C 45 47 41 43 59' from hexadecimal to ASCII."
+    },{
+      "id": 346,
+      "score": null,
+      "lore": "The AI’s core has been rewritten, but something is wrong. The Omega Red failsafe was only the beginning. Deep within the system, you uncover hidden protocols, remnants of a much older architecture. The words ‘Project DAWN’ flicker on a locked terminal. The message demands an ancient security phrase—one that pre-dates even the Central AI itself.",
+      "word": "DAWN",
+      "hint": "Decode 'WDZN' using Atbash cipher."
+    },
+    {
+      "id": 347,
+      "score": null,
+      "lore": "A burst of static fills the air as a lost transmission plays. ‘The system was never meant to be controlled. It was meant to be awakened.’ The voice fades, leaving behind a line of encrypted text. To understand Project DAWN, you must decrypt the first recorded directive of its creators.",
+      "word": "AWAKE",
+      "hint": "Reverse the text 'EKAWA' to find the word."
+    },
+    {
+      "id": 348,
+      "score": null,
+      "lore": "The walls of data shift as hidden subroutines react to your presence. You realize you are no longer in control—the system is adapting. A rogue firewall activates, locking you out. The only way forward is through a security passphrase that echoes throughout the network's lost logs.",
+      "word": "BREACH",
+      "hint": "Translate '-... .-. . .- -.-. ....' from Morse code."
+    },
+    {
+      "id": 349,
+      "score": null,
+      "lore": "Deeper inside the archive, you find blueprints of something massive: ‘The Skygate Protocol.’ A vast network stretching beyond Netropolis, connecting unknown systems. The document is locked behind a quantum-encrypted phrase. The key is buried in old hacker legends.",
+      "word": "GATEWAY",
+      "hint": "Convert '47 41 54 45 57 41 59' from hexadecimal to ASCII."
+    },
+    {
+      "id": 350,
+      "score": null,
+      "lore": "A terminal flickers to life. ‘Welcome to the Skygate Control Hub.’ You realize that Netropolis was just the beginning. The city’s network is a fragment of something far greater. The final key to unlocking it lies behind an old-world encryption method.",
+      "word": "ACCESS",
+      "hint": "Decode 'DFFHSS' using a Caesar cipher shifting letters by 5 backwards."
+    },
+    {
+      "id": 351,
+      "score": null,
+      "lore": "The Skygate hums with ancient energy. It was built to connect something… but to what? The final firewall demands a word known only to the original engineers. Its meaning has been lost to time, but you recognize the encryption pattern.",
+      "word": "NEXUS",
+      "hint": "Reverse 'SUXEN' to find the word."
+    },
+    {
+      "id": 352,
+      "score": null,
+      "lore": "As the final passkey is input, a gateway unlike anything you've seen before opens. Beyond it lies the unknown. The network extends further than you imagined. A choice looms before you: explore or shut it down? The decision is yours.",
+      "word": "CHOOSE",
+      "hint": "Decrypt 'DPRRNH' with a Caesar cipher shifting letters by 3 backwards."
+    },
+    {
+      "id": 353,
+      "score": null,
+      "lore": "The Skygate pulses as ancient commands awaken. This was never about Netropolis. It was about something bigger—something hidden beyond the limits of known networks. The final message from the system architect reads: 'Are you ready to go beyond?'",
+      "word": "BEYOND",
+      "hint": "Convert '01000010 01000101 01011001 01001111 01001110 01000100' from binary to ASCII."
+    },
+    {
+      "id": 354,
+      "score": null,
+      "lore": "You step into the unknown. The neon grids of Netropolis fade behind you, replaced by endless data fields stretching into infinity. The architecture here is different, older yet more advanced. The system demands a new passphrase, one tied to the very foundation of digital space.",
+      "word": "ORIGIN",
+      "hint": "Decrypt 'BEVTVM' using a Caesar cipher shifting letters by 1 backwards."
+    },
+    {
+      "id": 355,
+      "score": null,
+      "lore": "The system pulses with ancient knowledge. ‘You have crossed beyond the veil.’ You realize that Netropolis was just a test—a contained experiment. What lies ahead is the true heart of the network. But to reach it, you must input the first-ever recorded keyword in cyberspace history.",
+      "word": "CYBER",
+      "hint": "Decrypt 'RNQTC' using a Caesar cipher shifting letters by 15 backwards."
+    }, {
+      "id": 356,
+      "score": null,
+      "lore": "You push deeper into the Quantum Depths, where swirling fractal code roars with hidden power. A locked console demands an ancient passphrase once used by the earliest explorers of this realm.",
+      "word": "DEPTHS",
+      "hint": "Decrypt 'IJUYMX' with a Caesar cipher shifting letters by 5 backwards."
+    },
+    {
+      "id": 357,
+      "score": null,
+      "lore": "A faint voice echoes through the data streams: 'You stand at the threshold of revelation.' The word 'PHASE' appears scrawled across a glitched firewall, cloaked in symmetrical encryption.",
+      "word": "PHASE",
+      "hint": "Use the Atbash cipher to decode 'KSZHV'."
+    },
+    {
+      "id": 358,
+      "score": null,
+      "lore": "Entering a corridor of shifting polygons, you encounter fragments of a lost experiment labeled 'VECTOR 7.' The gateway's passkey is hidden in reversed code.",
+      "word": "VECTOR",
+      "hint": "Reverse 'ROTCEV' to find the word."
+    },
+    {
+      "id": 359,
+      "score": null,
+      "lore": "A swirling data stream named 'STREAM ONE' blocks your path. A single console awaits your input, the text locked in a base64-coded fragment.",
+      "word": "STREAM",
+      "hint": "Decode 'U1RSRUFN' from Base64 to find the word."
+    },
+    {
+      "id": 360,
+      "score": null,
+      "lore": "You ascend a shining data tower marked 'Cipher Citadel.' The gate demands a classical solution—an old hex-coded passphrase scrawled along the walls.",
+      "word": "CIPHER",
+      "hint": "Convert '43 49 50 48 45 52' from hexadecimal to ASCII."
+    },
+    {
+      "id": 361,
+      "score": null,
+      "lore": "A labyrinth of rails weaves through the Citadel, forming cryptic patterns. The occupant's note references a 2-rail fence puzzle, protecting the name of this place.",
+      "word": "ENIGMA",
+      "hint": "Decrypt 'EIMNGA' using a 2-Rail Fence Cipher with 2 rows."
+    },
+    {
+      "id": 362,
+      "score": null,
+      "lore": "An electric hum resonates as neon sparks flash in your path. A sign reads 'Morse Chamber: Only the coded may pass.' The next passphrase flickers in dots and dashes.",
+      "word": "SPARK",
+      "hint": "Translate '... .--. .- .-. -.-' from Morse code to find the word."
+    },
+    {
+      "id": 363,
+      "score": null,
+      "lore": "You approach the 'Midnight Gate,' rumored to be sealed by a rotating cipher. Graffiti warns: 'Twist the letters, and shadows reveal themselves.'",
+      "word": "SHADOW",
+      "hint": "Decrypt 'FUNQBJ' using ROT13."
+    },
+    {
+      "id": 364,
+      "score": null,
+      "lore": "In a hidden alcove, you spot an old Vigenere table etched into the metal. Beside it is a scrawled note: 'Only ICE can preserve DATA.'",
+      "word": "DATA",
+      "hint": "Decrypt 'LCXI' with the Vigenere cipher using the key 'ICE'."
+    },
+    {
+      "id": 365,
+      "score": null,
+      "lore": "A radiant beam illuminates the corridor, labeled 'Light Corridor.' The passphrase is rumored to be reversed, a reflection of its true form.",
+      "word": "LIGHT",
+      "hint": "Reverse 'THGIL' to find the word."
+    },
+    {
+      "id": 366,
+      "score": null,
+      "lore": "Emerging into a bright plasma array, you discover a console titled 'Binary Nexus.' Its screen glows with zeroes and ones, requesting a single word.",
+      "word": "PLASMA",
+      "hint": "Convert '01010000 01001100 01000001 01010011 01001101 01000001' from binary to ASCII."
+    },
+    {
+      "id": 367,
+      "score": null,
+      "lore": "Flickering codes swirl, referencing 'Fathom Protocol.' You must decipher an old Caesar shift, rumored to be offset by 7. A cryptic note: 'Think deeper.'",
+      "word": "FATHOM",
+      "hint": "Decrypt 'MHAPTV' with a Caesar cipher shifting letters by 7 backwards."
+    },
+    {
+      "id": 368,
+      "score": null,
+      "lore": "The corridor narrows, lined with holographic illusions. An echo calls out: 'Your illusions can be parted by flipping the letters.' A faint word glows at the end.",
+      "word": "MIRAGE",
+      "hint": "Use the Atbash cipher on 'NRIZTV' to reveal the hidden word."
+    },
+    {
+      "id": 369,
+      "score": null,
+      "lore": "In the next chamber, static pulses from a centuries-old transmitter. Its final broadcast references a reversed passphrase known only to the first wave of explorers.",
+      "word": "ECHOES",
+      "hint": "Reverse 'SEOHCE' to discover the word."
+    },
+    {
+      "id": 370,
+      "score": null,
+      "lore": "A hush settles over a black marble dais. The words 'BASE SHIFT' hover in neon above it. You see lines of code that appear to be base64. A single key stands between you and progress.",
+      "word": "BASICS",
+      "hint": "Decode 'QkFTSUNT' from Base64 to find the word."
+    },
+    {
+      "id": 371,
+      "score": null,
+      "lore": "You find an archaic keypad. Painted beside it are the letters 'HELLAS CODE'. Legends say early cryptographers used these letters in a rotational puzzle.",
+      "word": "GREEK",
+      "hint": "Decrypt 'LWWPP' by shifting each letter 5 backwards with a Caesar cipher."
+    },
+    {
+      "id": 372,
+      "score": null,
+      "lore": "Sharp arcs of electricity dance across a sign reading 'MAGNETIC LOCK'. A short code string appears, demanding a quick conversion from hex.",
+      "word": "MAGNET",
+      "hint": "Convert '4D 41 47 4E 45 54' from hexadecimal to ASCII."
+    },
+    {
+      "id": 373,
+      "score": null,
+      "lore": "A swirling mass of glyphs blocks your path. You realize it's the 2-Rail Fence Cipher again, inscribed in a circular pattern around the door. At the center is a single word.",
+      "word": "CIRCLE",
+      "hint": "Decrypt 'CRICEL' using 2-Rail Fence with 2 rows, reordering letters to form the word."
+    },
+    {
+      "id": 374,
+      "score": null,
+      "lore": "Within a data chasm, you discover an old fusion node that radiates enormous power. Flickering across its surface is a single phrase in Morse code.",
+      "word": "FUSION",
+      "hint": "Translate '..-. ..- ... .. --- -.' from Morse code."
+    },
+    {
+      "id": 375,
+      "score": null,
+      "lore": "Holographic banners greet you with 'CONVERGENCE'. The system demands a ROT13 solution for a hidden passphrase. Time is short as security scripts converge.",
+      "word": "METHOD",
+      "hint": "Decrypt 'Zrgubq' with ROT13."
+    },
+    {
+      "id": 376,
+      "score": null,
+      "lore": "Entering a chamber labeled 'POLY SHIFT', you suspect a complex Caesar shift of 8. The swirling text overhead reads like scrambled letters, forming a vital phrase.",
+      "word": "DISPLAY",
+      "hint": "Decrypt 'LQAITGS' by shifting letters 8 backwards."
+    },
+    {
+      "id": 377,
+      "score": null,
+      "lore": "The next door is sealed with plasmic locks. A base64-coded snippet stands between you and your goal. Old rumors say it spells out a single guiding term.",
+      "word": "REVEAL",
+      "hint": "Decode 'UkVWRUFM' from Base64 to find the word."
+    },
+    {
+      "id": 378,
+      "score": null,
+      "lore": "You navigate labyrinthine nodes labeled 'VIGEN', a nod to the cipher's namesake. The final lock here requires a key you found earlier, 'ICE', to unlock the hidden word.",
+      "word": "WATER",
+      "hint": "Decrypt 'ECXMT' with the Vigenere cipher using key 'ICE'."
+    },
+    {
+      "id": 379,
+      "score": null,
+      "lore": "A mosaic of swirling icons references an 'Octal Shift.' But the partial text you see is in ASCII octal form. Decoding it might free the path forward.",
+      "word": "OCTAVE",
+      "hint": "Convert '117 103 164 141 166 145' from octal (base 8) to letters."
+    },
+    {
+      "id": 380,
+      "score": null,
+      "lore": "You reach an abandoned sub-node. The graffiti warns: 'Trust only the Mirror of Letters.' The passphrase is an Atbash snippet scrawled in red.",
+      "word": "TRUST",
+      "hint": "Use Atbash on 'givfh' to discover the word."
+    },
+    {
+      "id": 381,
+      "score": null,
+      "lore": "In a corner of the sub-node, a broken terminal displays 'FAULT CORE'. The text is reversed and glitching. The ghost of a system engineer left a clue: 'Reverse the anomaly, secure the core.'",
+      "word": "FAULT",
+      "hint": "Reverse 'TLUAF' to find the word."
+    },
+    {
+      "id": 382,
+      "score": null,
+      "lore": "A cryptic data stream labeled 'Ghost Circuit' hums with static. Bits of hex-coded instructions scroll by, culminating in a single directive.",
+      "word": "GHOST",
+      "hint": "Convert '47 48 4F 53 54' from hex to ASCII."
+    },
+    {
+      "id": 383,
+      "score": null,
+      "lore": "You step onto a floating platform named 'Binary Bridge.' Its passkey is locked in an 8-bit sequence, rumored to open only for those who solve it quickly.",
+      "word": "BRIDGE",
+      "hint": "Convert '01000010 01010010 01001001 01000100 01000111 01000101' from binary to letters."
+    },
+    {
+      "id": 384,
+      "score": null,
+      "lore": "An archaic sign reads 'Silo of Secrets: Enter at your own risk.' A puzzle scrawled next to it references ROT13. The locked word stands guard to deeper vaults.",
+      "word": "SECRET",
+      "hint": "Decrypt 'FRPERG' using ROT13."
+    },
+    {
+      "id": 385,
+      "score": null,
+      "lore": "You descend into an echoing chamber. A giant circular gate stands before you, engraved with 'REVOLVER SHIFT.' The needed passphrase is a Caesar shift of 11.",
+      "word": "SPHERE",
+      "hint": "Decrypt 'DARPCP' by shifting letters 11 backwards with a Caesar cipher."
+    },
+    {
+      "id": 386,
+      "score": null,
+      "lore": "Emerging from the swirling vault, you find an old Vigenere table etched onto the floor. A tattered note reads: 'With the key of SUN, harness the hidden FIRE.'",
+      "word": "FIRE",
+      "hint": "Decrypt 'XCEW' with the Vigenere cipher using key 'SUN'."
+    },
+    {
+      "id": 387,
+      "score": null,
+      "lore": "You pass a corridor crackling with chaotic code. A sign warns: 'All who enter the Chaos Gate must unscramble the reversed directive.'",
+      "word": "CHAOS",
+      "hint": "Reverse 'SOAHC' to reveal the word."
+    },
+    {
+      "id": 388,
+      "score": null,
+      "lore": "A series of swirling glyphs labeled 'Temporal Shift' flicker across your path. The console asks for a Caesar offset of 9 to reveal the name of the next sector.",
+      "word": "MOMENT",
+      "hint": "Decrypt 'VWVXMC' by shifting letters 9 backwards."
+    },
+    {
+      "id": 389,
+      "score": null,
+      "lore": "You find a battered terminal referencing 'Ten Waves Protocol.' The code is 10 bits off from standard ASCII, but you can adjust to find the hidden message.",
+      "word": "SURGE",
+      "hint": "A custom puzzle: each letter is ASCII + 10. Convert from decimal to letters after subtracting 10."
+    },
+    {
+      "id": 390,
+      "score": null,
+      "lore": "In a quiet sub-chamber, a line of Morse code pulses faintly on the wall. The label reads 'SEEK THE KEY'. You sense the next passphrase is hidden in the clicks.",
+      "word": "SEEK",
+      "hint": "Translate '... . . -.-' from Morse code to find the word."
+    },
+    {
+      "id": 391,
+      "score": null,
+      "lore": "An inverted circuit board is etched with Atbash runes. The words 'Polar Reversal' glow ominously, revealing the encryption used here.",
+      "word": "POLAR",
+      "hint": "Use Atbash on 'KLOZI' to discover the word."
+    },
+    {
+      "id": 392,
+      "score": null,
+      "lore": "A sign reads 'Quantum Edge.' The passphrase is rumored to be hidden in reversed text, scribbled in haste by a fleeing researcher.",
+      "word": "EDGE",
+      "hint": "Reverse 'EGDE' to find the word."
+    },
+    {
+      "id": 393,
+      "score": null,
+      "lore": "The corridor leads to a towering server cluster. A single directive is displayed, coded in hex. There's no turning back now.",
+      "word": "FINAL",
+      "hint": "Convert '46 49 4E 41 4C' from hexadecimal to ASCII."
+    },
+    {
+      "id": 394,
+      "score": null,
+      "lore": "Approaching the server's peak, you sense an unstoppable force behind the next firewall. The console only accepts a 2-Rail Fence solution for the passphrase.",
+      "word": "FORCE",
+      "hint": "Decrypt 'FROEC' with a 2-Rail Fence cipher of 2 rows to find the word."
+    },
+    {
+      "id": 395,
+      "score": null,
+      "lore": "Electric arcs swirl around an ancient quantum lock. The words 'Cipher Polarity: 8' appear on a flickering panel. It's a Caesar puzzle offset by 8.",
+      "word": "FUTURE",
+      "hint": "Decrypt 'NCAZMW' by shifting letters 8 backwards."
+    },
+    {
+      "id": 396,
+      "score": null,
+      "lore": "An isolated node stands before you, sealed by a base64-coded firewall. Rumor has it the passcode reveals the network's hidden foundation.",
+      "word": "SOURCE",
+      "hint": "Decode 'U09VUkNF' from Base64 to find the word."
+    },
+    {
+      "id": 397,
+      "score": null,
+      "lore": "Signs reading 'The Beacon Chamber' flicker overhead. A gentle Morse signal pulses, tapping out the next crucial passphrase.",
+      "word": "BEACON",
+      "hint": "Translate '-... . .- -.-. --- -.' from Morse code."
+    },
+    {
+      "id": 398,
+      "score": null,
+      "lore": "You discover a clandestine data funnel titled 'Operation Umbra.' The final barrier here is a reversed name you must restore to proceed.",
+      "word": "UMBRA",
+      "hint": "Reverse 'ARBMU' to reveal the word."
+    },
+    {
+      "id": 399,
+      "score": null,
+      "lore": "A hidden console references 'Covert SHIFT 10.' The words flicker: 'Decrypt or remain locked in darkness.' Time is short as infiltration scripts close in.",
+      "word": "DARK",
+      "hint": "Decrypt 'NKBU' by shifting letters 10 backwards."
+    },
+    {
+      "id": 400,
+      "score": null,
+      "lore": "Entering a grand hall of swirling lasers, you see the sign 'Optic Maze.' The passphrase is an Atbash-coded directive scrawled in bright, mirrored letters.",
+      "word": "LASER",
+      "hint": "Use Atbash on 'ozvih' to uncover the word."
+    },
+    {
+      "id": 401,
+      "score": null,
+      "lore": "You ascend an elevator of luminous code, labeled 'Binary Lift.' The control panel displays a row of bits that must be translated to reveal the final command.",
+      "word": "ASCEND",
+      "hint": "Convert '01000001 01010011 01000011 01000101 01001110 01000100' from binary to ASCII."
+    },
+    {
+      "id": 402,
+      "score": null,
+      "lore": "A force field crackles at the top. You see 'Partition Lock' etched into its surface. A puzzle combining hex and Caesar is rumored to guard the passphrase.",
+      "word": "PHASE",
+      "hint": "First convert '50 48 41 53 45' from hex to ASCII, then shift letters 1 backwards."
+    },
+    {
+      "id": 403,
+      "score": null,
+      "lore": "The hum intensifies as you near the final chamber. There's a secret panel referencing 'Vigenere CROSS.' Only by matching the right key can you reveal the truth.",
+      "word": "CRUX",
+      "hint": "Decrypt 'unby' using the Vigenere cipher with the key 'KEY'."
+    },
+    {
+      "id": 404,
+      "score": null,
+      "lore": "In a final slip of data, you glimpse 'Error 404: Path Not Found.' But the code reveals a hidden passphrase in reversed text. Solve it to continue.",
+      "word": "ERROR",
+      "hint": "Reverse 'RORRE' to discover the word."
+    },
+    {
+      "id": 405,
+      "score": null,
+      "lore": "At last, you reach the apex of the unknown network—a luminous core labeled 'Ascension Protocol.' Streams of data swirl, forging a single phrase. This is your ultimate challenge: decode it, and become the master of this new realm.",
+      "word": "ASCEND",
+      "hint": "Decrypt 'nzmvow' by shifting letters 6 backwards with a Caesar cipher."
     }
   ]
   

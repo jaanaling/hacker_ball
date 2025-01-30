@@ -76,4 +76,24 @@ class UserRepository {
     );
     return level;
   }
+
+  Future<void> updateLevel(Level updated) async {
+    return JsonLoader.modifyDataList<Level>(
+      "level",
+      updated,
+      () async {
+        final level = await loadLevels();
+        return level;
+      },
+      (item) => item.toMap(),
+      (itemList) async {
+        if (itemList.isNotEmpty) {
+          itemList[itemList.indexWhere((element) => element.id == updated.id)] =
+              updated;
+        } else {
+          itemList.add(updated);
+        }
+      },
+    );
+  }
 }

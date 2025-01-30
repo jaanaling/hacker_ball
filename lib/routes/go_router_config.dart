@@ -6,8 +6,9 @@ import 'package:haker_ball/src/feature/rituals/presentation/achievement_screen.d
 import 'package:haker_ball/src/feature/rituals/presentation/article_screen.dart';
 import 'package:haker_ball/src/feature/rituals/presentation/articles_screen.dart';
 import 'package:haker_ball/src/feature/rituals/presentation/game_screen.dart';
-import 'package:haker_ball/src/feature/rituals/presentation/home_screen.dart';
+
 import 'package:haker_ball/src/feature/rituals/presentation/initial_screen.dart';
+import 'package:haker_ball/src/feature/rituals/presentation/select_screen.dart';
 
 import '../src/feature/rituals/model/article.dart';
 import '../src/feature/splash/presentation/screens/splash_screen.dart';
@@ -44,50 +45,52 @@ GoRouter buildGoRouter = GoRouter(
               },
               routes: <RouteBase>[
                 GoRoute(
-                  path: RouteValue.select.path,
+                  path: RouteValue.articles.path,
                   builder: (BuildContext context, GoRouterState state) {
-                    final extra = state.extra! as Map<String, dynamic>;
-                    return InitialScreen();
+                    return ArticlesScreen();
+                  },
+                  routes: <RouteBase>[
+                    GoRoute(
+                      path: RouteValue.article.path,
+                      builder: (BuildContext context, GoRouterState state) {
+                        final article = state.extra! as Article;
+                        return ArticleScreen(article: article);
+                      },
+                    ),
+                  ],
+                ),
+                GoRoute(
+                  path: RouteValue.achievements.path,
+                  builder: (BuildContext context, GoRouterState state) {
+                    return const AchievementScreen();
                   },
                 ),
                 GoRoute(
-                  path: RouteValue.game.path,
-                  builder: (BuildContext context, GoRouterState state) {
-                    return GameScreen();
-                  },
-                ),
+                    path: RouteValue.select.path,
+                    builder: (BuildContext context, GoRouterState state) {
+                      return SelectScreen();
+                    },
+                    routes: [
+                      GoRoute(
+                          path: RouteValue.initial.path,
+                          builder: (BuildContext context, GoRouterState state) {
+                            return InitialScreen(
+                              id: state.extra! as int,
+                            );
+                          },
+                          routes: [
+                            GoRoute(
+                              path: RouteValue.game.path,
+                              builder:
+                                  (BuildContext context, GoRouterState state) {
+                                return GameScreen(
+                                  puzzleId: state.extra! as int,
+                                );
+                              },
+                            ),
+                          ]),
+                    ]),
               ],
-            ),
-          ],
-        ),
-        StatefulShellBranch(
-          navigatorKey: _articlesNavigatorKey,
-          routes: <RouteBase>[
-            GoRoute(
-              path: RouteValue.articles.path,
-              builder: (BuildContext context, GoRouterState state) {
-                return ArticlesScreen();
-              },
-              routes: <RouteBase>[
-                GoRoute(
-                  path: RouteValue.article.path,
-                  builder: (BuildContext context, GoRouterState state) {
-                    final article = state.extra! as Article;
-                    return ArticleScreen(article: article);
-                  },
-                ),
-              ],
-            ),
-          ],
-        ),
-        StatefulShellBranch(
-          navigatorKey: _achievementsNavigatorKey,
-          routes: <RouteBase>[
-            GoRoute(
-              path: RouteValue.achievements.path,
-              builder: (BuildContext context, GoRouterState state) {
-                return const AchievementScreen();
-              },
             ),
           ],
         ),

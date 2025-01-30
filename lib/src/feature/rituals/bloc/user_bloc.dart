@@ -7,7 +7,6 @@ import 'package:haker_ball/src/feature/rituals/model/level.dart';
 import 'package:haker_ball/src/feature/rituals/model/user.dart';
 import 'package:haker_ball/src/feature/rituals/repository/user_repository.dart';
 
-
 part 'user_event.dart';
 part 'user_state.dart';
 
@@ -16,10 +15,21 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   UserBloc() : super(const UserLoading()) {
     on<UserLoadData>(_onUserLoadData);
+    on<UserDailyReward>(_onUserDailyReward);
 
     on<UserHintUsed>(_onHintUsed);
     on<UserPuzzleSolved>(_onPuzzleSolved);
     on<UserAchievementEarned>(_onAchievementEarned);
+  }
+  
+  Future<void> _onUserDailyReward(
+      UserDailyReward event, Emitter<UserState> emit) async {
+    if (state is! UserLoaded) return;
+    final current = state as UserLoaded;
+    final oldUser = current.user;
+    final newUser = oldUser.copyWith(hints: oldUser.hints + 2);
+    await userRepository.save(newUser);
+    emit(current.copyWith(user: newUser));
   }
 
   Future<void> _onUserLoadData(
@@ -46,7 +56,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     }
   }
 
-  void _onHintUsed(UserHintUsed event, Emitter<UserState> emit) {
+  Future<void> _onHintUsed(UserHintUsed event, Emitter<UserState> emit) async {
     if (state is! UserLoaded) return;
     final current = state as UserLoaded;
 
@@ -58,32 +68,42 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       hints: newHints,
       hintsUsed: newHintsUsed,
     );
-    userRepository.save(newUser);
+    await userRepository.save(newUser);
 
     emit(current.copyWith(user: newUser));
   }
 
-  void _onPuzzleSolved(UserPuzzleSolved event, Emitter<UserState> emit) {
+  Future<void> _onPuzzleSolved(
+      UserPuzzleSolved event, Emitter<UserState> emit) async {
     if (state is! UserLoaded) return;
     final current = state as UserLoaded;
 
     final wasCorrect = event.isCorrect;
     final oldUser = current.user;
+    final oldLevel = current.levels[event.puzzleId];
 
-    final newPuzzlesSolved = oldUser.puzzlesSolved + (wasCorrect ? 1 : 0);
-    final newHint = wasCorrect ? oldUser.hints + 2 : oldUser.hints;
+    final newPuzzlesSolved = oldUser.puzzlesSolved +
+        (wasCorrect && event.puzzleId == oldUser.puzzlesSolved ? 1 : 0);
+    final newHint = wasCorrect && event.puzzleId == oldUser.puzzlesSolved
+        ? oldUser.hints + event.score
+        : oldUser.hints;
 
     final newUser = oldUser.copyWith(
       hints: newHint,
       puzzlesSolved: newPuzzlesSolved,
+      achievements:
+          oldUser.achievements.contains(0) ? oldUser.achievements : [1, 5],
     );
 
-    userRepository.save(newUser);
-    emit(current.copyWith(user: newUser));
+    final level = oldLevel.copyWith(score: event.score);
+
+    await userRepository.save(newUser);
+    await userRepository.updateLevel(level);
+
+    final newsLevels = await userRepository.loadLevels();
+    emit(current.copyWith(user: newUser, levels: newsLevels));
 
     if (!wasCorrect) return;
-
-    checkAch(oldUser, newPuzzlesSolved, newUser, event);
   }
 
   void _onAchievementEarned(
@@ -106,22 +126,13 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
     final newAchievements = List<int>.from(oldUser.achievements)
       ..add(achievement.id);
-    final newHints = oldUser.hints + achievement.reward;
 
     final newUser = oldUser.copyWith(
       achievements: newAchievements,
-      hints: newHints,
     );
 
     userRepository.save(newUser);
 
     emit(current.copyWith(user: newUser));
   }
-
-  void checkAch(
-    User oldUser,
-    int newPuzzlesSolved,
-    User newUser,
-    UserPuzzleSolved event,
-  ) {}
 }

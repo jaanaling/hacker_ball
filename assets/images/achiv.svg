@@ -1,0 +1,47 @@
+<svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="55" cy="55" r="48" fill="#170042" />
+    <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M69.6096 1.96147C64.9573 0.682875 60.0584 0 55 0C24.6243 0 0 24.6243 0 55C0 85.3757 24.6243 110 55 110C56.9637 110 58.9034 109.897 60.8139 109.696L60 106.659L77.3867 102L78.1634 104.899C96.9649 96.1564 110 77.1005 110 55C110 39.4353 103.535 25.3807 93.143 15.3752L91.7219 17.9542L68 4.88248L69.6096 1.96147ZM55 103C81.5097 103 103 81.5097 103 55C103 28.4903 81.5097 7 55 7C28.4903 7 7 28.4903 7 55C7 81.5097 28.4903 103 55 103Z"
+        fill="url(#paint0_linear_11_1371)" />
+    <mask id="path-3-outside-1_11_1371" maskUnits="userSpaceOnUse" x="54" y="52" width="52"
+        height="21" fill="black">
+        <rect fill="white" x="54" y="52" width="52" height="21" />
+        <path d="M103 55C103 59.635 102.329 64.2455 101.007 68.688L55 55H103Z" />
+    </mask>
+    <path d="M103 55C103 59.635 102.329 64.2455 101.007 68.688L55 55H103Z" stroke="#170042"
+        stroke-width="6" mask="url(#path-3-outside-1_11_1371)" />
+    <mask id="path-4-outside-2_11_1371" maskUnits="userSpaceOnUse" x="7" y="2" width="56"
+        height="64" fill="black">
+        <rect fill="white" x="7" y="2" width="56" height="64" />
+        <path
+            d="M44.531 8.15557C38.3793 9.53037 32.5587 12.1034 27.4014 15.7277C22.244 19.352 17.8511 23.9566 14.4733 29.2787L55 55L44.531 8.15557Z" />
+    </mask>
+    <path
+        d="M44.531 8.15557C38.3793 9.53037 32.5587 12.1034 27.4014 15.7277C22.244 19.352 17.8511 23.9566 14.4733 29.2787L55 55L44.531 8.15557Z"
+        stroke="#170042" stroke-width="10" mask="url(#path-4-outside-2_11_1371)" />
+    <path
+        d="M44.422 7.6676C38.2062 9.05673 32.3249 11.6565 27.1139 15.3186C21.9028 18.9807 17.4641 23.6333 14.0511 29.0107"
+        stroke="url(#paint1_linear_11_1371)" stroke-linecap="round" stroke-linejoin="round"
+        stroke-dasharray="0.1 5" />
+    <mask id="path-6-outside-3_11_1371" maskUnits="userSpaceOnUse" x="15" y="52" width="44"
+        height="47" fill="black">
+        <rect fill="white" x="15" y="52" width="44" height="47" />
+        <path
+            d="M21.0589 88.9411C22.6371 90.5194 24.3235 91.9856 26.1058 93.3291L55 55L21.0589 88.9411Z" />
+    </mask>
+    <path
+        d="M21.0589 88.9411C22.6371 90.5194 24.3235 91.9856 26.1058 93.3291L55 55L21.0589 88.9411Z"
+        stroke="#170042" stroke-width="8" mask="url(#path-6-outside-3_11_1371)" />
+    <defs>
+        <linearGradient id="paint0_linear_11_1371" x1="55" y1="-10.3529" x2="55" y2="115.176"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FD9CFF" />
+            <stop offset="1" stop-color="#DB32FD" />
+        </linearGradient>
+        <linearGradient id="paint1_linear_11_1371" x1="55" y1="-2.03529" x2="55" y2="107.518"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#9CDEFF" />
+            <stop offset="1" stop-color="#32D8FD" />
+        </linearGradient>
+    </defs>
+</svg>

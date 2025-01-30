@@ -5,20 +5,20 @@ import 'package:haker_ball/ui_kit/animated_button.dart';
 
 class TipsBlock extends StatelessWidget {
   final int tipsCount;
-  const TipsBlock({super.key, required this.tipsCount});
+  final VoidCallback? onPressed;
+  const TipsBlock({super.key, required this.tipsCount, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return AnimatedButton(
         child: SizedBox(
           width: 150,
-          height: 78,
           child: Stack(
+            alignment: Alignment.center,
             children: [
               AppIcon(
                 asset: IconProvider.tipsBlock.buildImageUrl(),
                 width: 150,
-                height: 78,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -42,13 +42,12 @@ class TipsBlock extends StatelessWidget {
                   AppIcon(
                     asset: IconProvider.tips.buildImageUrl(),
                     width: 36,
-                    height: 54,
                   ),
                 ],
               ),
             ],
           ),
         ),
-        onPressed: () {});
+        onPressed: onPressed ?? () {});
   }
 }

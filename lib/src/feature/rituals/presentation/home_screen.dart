@@ -11,10 +11,25 @@ import 'package:haker_ball/src/core/utils/size_utils.dart';
 import 'package:haker_ball/src/feature/rituals/bloc/user_bloc.dart';
 import 'package:haker_ball/ui_kit/animated_button.dart';
 import 'package:haker_ball/ui_kit/app_button.dart';
+import 'package:haker_ball/ui_kit/gradient_text.dart';
+import 'package:haker_ball/ui_kit/sound_button.dart';
 import 'package:haker_ball/ui_kit/tips_block.dart';
+import 'package:just_audio/just_audio.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    playMusic();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,66 +50,46 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      AnimatedButton(child: AppIcon(asset: IconProvider.achievements.buildImageUrl(),  width: 63,
-                        height: 63,), onPressed: (){
-
-                      }),
-                      TipsBlock(tipsCount: 12)
-                    ],
-                  ),
-                  Gap(15),
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      AppIcon(
-                        asset: IconProvider.mainBall.buildImageUrl(),
-                        width: 181,
-                        height: 181,
+                      Row(
+                        children: [
+                          AnimatedButton(
+                              child: AppIcon(
+                                asset:
+                                    IconProvider.achievements.buildImageUrl(),
+                                width: 63,
+                                height: 63,
+                              ),
+                              onPressed: () {
+                                context.push(
+                                  "${RouteValue.home.path}/${RouteValue.achievements.path}",
+                                );
+                              }),
+                          Gap(15),
+                          SoundButton(),
+                        ],
                       ),
-                      Text(
-                        'WHITE',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 37,
-                          fontFamily: 'Gunterz',
-                          fontWeight: FontWeight.w500,
-                        ),
-                      )
+                      TipsBlock(tipsCount: state.user.hints)
                     ],
-                  ),
-                  Gap(12),
-                  Text(
-                    'Challenge your mind every day!',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w500,
-                    ),
                   ),
                   Gap(35),
-                  AppButton(color: ButtonColors.purple, onPressed: (){
-
-                  }, title: 'select level'),
-                  Gap(15),
-                  AppButton(color: ButtonColors.purple, onPressed: (){
-
-                  }, title: 'Daily'),
-                  Gap(15),
-                  AppButton(color: ButtonColors.purple, onPressed: (){
-
-                  }, title: 'articles'),
+                  AppButton(
+                      color: ButtonColors.purple,
+                      onPressed: () {
+                        context.push(
+                          "${RouteValue.home.path}/${RouteValue.select.path}",
+                        );
+                      },
+                      title: 'Hack the world'),
+                  AppButton(
+                      color: ButtonColors.purple,
+                      onPressed: () {
+                        context.push(
+                          "${RouteValue.home.path}/${RouteValue.articles.path}",
+                        );
+                      },
+                      title: 'directory'),
                   Gap(12),
-                  Text(
-                    'Daily tip: ${shortTips[DateTime.now().weekday - 1]}',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w500,
-                    ),
-                  )
+                  SizedBox(height: 167, child: _ClaimBlock()),
                 ],
               ),
             ),
@@ -112,9 +107,71 @@ class _ClaimBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-
+        AppIcon(
+          asset: IconProvider.day.buildImageUrl(),
+          fit: BoxFit.fill,
+        ),
+        Positioned(
+          top: 15,
+          right: 30,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                "+2",
+                style: TextStyle(fontSize: 52, fontFamily: "UNCAGE"),
+                textAlign: TextAlign.center,
+              ),
+              Gap(30),
+              AppIcon(
+                asset: IconProvider.tips.buildImageUrl(),
+                width: 50,
+              )
+            ],
+          ),
+        ),
+        Positioned(
+          top: 60,
+          left: 30,
+          child: GradientText("DAILY\nBITS", fontSize: 30, gradientColor: [
+            const Color.fromARGB(213, 255, 255, 255),
+            const Color(0xFF4897FF),
+          ], shaderColor: [
+            const Color(0xD600172C),
+            const Color(0xFF4897FF),
+          ]),
+        ),
+        if ((context.read<UserBloc>().state as UserLoaded).user.hints == 1 &&
+            (context.read<UserBloc>().state as UserLoaded).user.hintsUsed == 0)
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: AnimatedButton(
+              onPressed: () {
+                context.read<UserBloc>().add(const UserDailyReward());
+              },
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  AppIcon(
+                    asset: IconProvider.claim.buildImageUrl(),
+                    fit: BoxFit.fill,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: GradientText("CLAIM", gradientColor: [
+                      const Color(0xFFFFE89C),
+                      const Color(0xFFFDD432),
+                    ], shaderColor: [
+                      const Color(0xFFFFE89C),
+                      const Color(0xFFFDD432),
+                    ]),
+                  )
+                ],
+              ),
+            ),
+          ),
       ],
     );
   }
 }
-
