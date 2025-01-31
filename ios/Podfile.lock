@@ -1,4 +1,6 @@
 PODS:
+  - advertising_id (0.0.1):
+    - Flutter
   - audio_session (0.0.1):
     - Flutter
   - Flutter (1.0.0)
@@ -15,6 +17,7 @@ PODS:
     - FlutterMacOS
 
 DEPENDENCIES:
+  - advertising_id (from `.symlinks/plugins/advertising_id/ios`)
   - audio_session (from `.symlinks/plugins/audio_session/ios`)
   - Flutter (from `Flutter`)
   - haptic_feedback (from `.symlinks/plugins/haptic_feedback/ios`)
@@ -23,6 +26,8 @@ DEPENDENCIES:
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
 
 EXTERNAL SOURCES:
+  advertising_id:
+    :path: ".symlinks/plugins/advertising_id/ios"
   audio_session:
     :path: ".symlinks/plugins/audio_session/ios"
   Flutter:
@@ -37,6 +42,7 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
 
 SPEC CHECKSUMS:
+  advertising_id: ea8a9b898196a0673bad1b0fe6c50541d9295d02
   audio_session: 32a33910dd5bb35d54297e4b50006481071f196b
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   haptic_feedback: 8cb3ee0cb6b797946c2b0df9c99ebc8f7ed79c71

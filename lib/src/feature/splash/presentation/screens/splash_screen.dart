@@ -1,3 +1,4 @@
+import 'package:advertising_id/advertising_id.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -24,6 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> startLoading(BuildContext context) async {
     await Future.delayed(const Duration(milliseconds: 1000));
+    final advertisingId = await AdvertisingId.id(true);
     context.go(RouteValue.home.path);
   }
 
