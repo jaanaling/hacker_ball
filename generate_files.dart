@@ -1,6 +1,20 @@
 import 'dart:io';
 import 'dart:math';
 
+// --------------------- ВАЖНО! ---------------------
+// Добавляем список с именами функций, иначе не будет работать.
+final List<String> _functionNames = [
+  'calculateSomething',
+  'updateData',
+  'resetValue',
+  'performAction',
+  'fetchItems',
+  'incrementCounter',
+  'doWork',
+  'handleRequest',
+  'processData',
+];
+
 class RandomFileGenerator {
   final List<String> _fileNames = [
     'Analyzer',
@@ -2228,13 +2242,11 @@ class RandomFileGenerator {
   ];
 
   final String _folderPath = Directory.current.path + '/assets/generated/';
-
-  Random _random = Random();
+  final Random _random = Random();
 
   // Проверка на дубликаты в списке
   static void checkForDuplicates(List<String> list) {
     final uniqueItems = <String>{};
-
     for (var item in list) {
       if (!uniqueItems.add(item)) {
         print('Duplicate: $item');
@@ -2247,44 +2259,39 @@ class RandomFileGenerator {
       Directory(_folderPath).createSync();
     }
 
-    // checkForDuplicates(_fileNames);
-    // checkForDuplicates(_functionNames);
-    // checkForDuplicates(_variableNames);
-
-    int fileCount = Random().nextInt(122) + 59;
+    int fileCount = _random.nextInt(10) + 3;
     List<String> selectedNames = [];
 
     for (int i = 0; i < fileCount; i++) {
       String randomFileName;
 
-      if (Random().nextInt(3) == 0) {
+      if (_random.nextInt(3) == 0) {
+        // Выбираем одно слово
         do {
-          randomFileName = _fileNames[Random().nextInt(_fileNames.length)];
+          randomFileName = _fileNames[_random.nextInt(_fileNames.length)];
         } while (selectedNames.contains(randomFileName));
       } else {
+        // Два слова склеиваем
         do {
-          randomFileName = _fileNames[Random().nextInt(_fileNames.length)];
+          randomFileName = _fileNames[_random.nextInt(_fileNames.length)];
           String secondWord;
-
           do {
-            secondWord = _fileNames[Random().nextInt(_fileNames.length)];
+            secondWord = _fileNames[_random.nextInt(_fileNames.length)];
           } while (secondWord == randomFileName);
-
           randomFileName += secondWord;
         } while (selectedNames.contains(randomFileName));
       }
 
+      selectedNames.add(randomFileName);
+
       String headerFilePath = '$_folderPath$randomFileName.h';
       String implementationFilePath = '$_folderPath$randomFileName.m';
 
-      int functionCount = Random().nextInt(18) + 1;
+      int functionCount = _random.nextInt(3) + 2;
 
       Class cls = Class();
-
-      String headerFileContent =
-      generateFileContentH(randomFileName, functionCount, cls);
-      String implementationFileContent =
-      generateFileContentM(randomFileName, cls);
+      String headerFileContent = generateFileContentH(randomFileName, functionCount, cls);
+      String implementationFileContent = generateFileContentM(randomFileName, cls);
 
       File(headerFilePath).writeAsStringSync(headerFileContent);
       File(implementationFilePath).writeAsStringSync(implementationFileContent);
@@ -2294,124 +2301,111 @@ class RandomFileGenerator {
   }
 
   String generateFileContentH(String fileName, int functionCount, Class cls) {
-    String content = '#import <Foundation/Foundation.h>\n';
-    content += '@interface $fileName : NSObject\n';
+    String content = '#import <Foundation/Foundation.h>\n\n';
+    content += '@interface $fileName : NSObject\n\n';
 
     List<String> funcNames = [];
-
     for (int i = 0; i < functionCount; i++) {
-      int variableCount = Random().nextInt(4) + 3;
-      List<String> usedVariableNames =
-      generateRandomVariableNames(variableCount);
-
-      int paramCount = Random().nextInt(4);
-      List<String> usedParamsNames = [];
-
-      for (int j = 0; j < paramCount; j++) {
-        usedParamsNames.add(usedVariableNames[0]);
-        usedVariableNames.removeAt(0);
-      }
-
+      // Генерируем функцию
       String funcName;
-
       do {
-        funcName = _functionNames[Random().nextInt(_functionNames.length)];
+        funcName = _functionNames[_random.nextInt(_functionNames.length)];
       } while (funcNames.contains(funcName));
-
       funcNames.add(funcName);
 
       Func func = generateRandomFunc(funcName);
       cls.funcs.add(func);
-      String functionDeclaration = generateFunctionDeclaration(func);
-      content += '$functionDeclaration;\n';
+
+      // Генерация сигнатуры для .h
+      content += generateFunctionDeclaration(func);
+      content += ";\n\n";
     }
 
-    content += '@end';
+    content += '@end\n';
     return content;
   }
 
   String generateFileContentM(String fileName, Class cls) {
     String content = '#import "$fileName.h"\n\n';
-
-    content += '@implementation $fileName\n';
+    content += '@implementation $fileName\n\n';
 
     for (Func func in cls.funcs) {
-      content += '- (${func.returnType})${func.name}';
-
-      if (func.params!.isNotEmpty) {
-        content += ':';
-
-        for (int i = 0; i < func.params!.length; i++) {
-          if (i > 0) {
-            content += ' ${func.params![i].$1}:';
-          }
-
-          content += '(${func.params![i].$1})${func.params![i].$1}';
-        }
-      }
-
-      content += '{\n';
-      content += '${generateRandomFunctionBody(func)}\n';
-      content += '}\n\n';
+      // Генерация сигнатуры для .m (реализация)
+      content += generateFunctionImplementationSignature(func);
+      content += " {\n";
+      content += generateRandomFunctionBody(func);
+      content += "\n}\n\n";
     }
 
-    content += '@end';
-
+    content += '@end\n';
     return content;
   }
 
+  // Правильная генерация сигнатуры для .h
   String generateFunctionDeclaration(Func func) {
-    String result = '- ';
+    // Пример: - (int)calculateSomething:(int)param1 param2:(int)name2 ...
+    StringBuffer sb = StringBuffer();
+    sb.write('- (${func.returnType})${func.name!}');
 
-    result += '(${func.returnType})';
-    result += func.name!;
+    if (func.params != null && func.params!.isNotEmpty) {
+      // Первый параметр
+      sb.write(':(${func.params![0].$1})${func.params![0].$2}');
 
-    if (func.params!.isNotEmpty) {
-      result += ':';
-
-      for (int i = 0; i < func.params!.length; i++) {
-        if (i > 0) {
-          result += ' ${func.params![i].$1}:';
-        }
-
-        result += '(${func.params![i].$2})${func.params![i].$1}';
+      // Последующие параметры (если есть)
+      for (int i = 1; i < func.params!.length; i++) {
+        final param = func.params![i];
+        sb.write(' ${param.$2}:(${param.$1})${param.$2}');
       }
     }
 
-    return result;
+    return sb.toString();
+  }
+
+  // Аналогично для .m (можно сделать единообразно)
+  String generateFunctionImplementationSignature(Func func) {
+    StringBuffer sb = StringBuffer();
+    sb.write('- (${func.returnType})${func.name!}');
+
+    if (func.params != null && func.params!.isNotEmpty) {
+      sb.write(':(${func.params![0].$1})${func.params![0].$2}');
+      for (int i = 1; i < func.params!.length; i++) {
+        final param = func.params![i];
+        sb.write(' ${param.$2}:(${param.$1})${param.$2}');
+      }
+    }
+
+    return sb.toString();
   }
 
   Func generateRandomFunc(String name) {
     Func func = Func();
-
     func.name = name;
-    func.returnType = _returnTypes[Random().nextInt(_returnTypes.length)];
+    func.returnType = _returnTypes[_random.nextInt(_returnTypes.length)];
 
-    int variableCount = Random().nextInt(2) + 3;
+    // Генерация переменных
+    int variableCount = _random.nextInt(2) + 3; // 3..4
     List<String> usedVariableNames = generateRandomVariableNames(variableCount);
 
-    int paramCount = Random().nextInt(3);
+    // Генерация параметров
+    int paramCount = _random.nextInt(3); // 0..2
     List<String> usedParamsNames = [];
-
     for (int j = 0; j < paramCount; j++) {
       usedParamsNames.add(usedVariableNames[0]);
       usedVariableNames.removeAt(0);
     }
 
     func.params = [];
-
     for (int i = 0; i < usedParamsNames.length; i++) {
       func.params!.add((
-      _paramTypes[Random().nextInt(_paramTypes.length)],
+      _paramTypes[_random.nextInt(_paramTypes.length)],
       usedParamsNames[i]
       ));
     }
 
     func.vars = [];
-
     for (int i = 0; i < usedVariableNames.length; i++) {
       func.vars!.add((
-      _paramTypes[Random().nextInt(_paramTypes.length)],
+      _paramTypes[_random.nextInt(_paramTypes.length)],
       usedVariableNames[i]
       ));
     }
@@ -2421,151 +2415,94 @@ class RandomFileGenerator {
 
   String generateRandomFunctionBody(Func func) {
     List<String> operators = ['+', '-', '*'];
-    String body = '\t';
+    StringBuffer sb = StringBuffer();
 
-    if (func.params!.isNotEmpty) {
+    // Пример заполнения тела
+    if (func.vars != null) {
+      // Генерим псевдокод
       for (int i = 0; i < func.vars!.length; i++) {
-        body += ab(i, Random().nextInt(func.params!.length), func, operators);
-        body += '\n';
-
-        if (Random().nextInt(2) == 1) {
-          body += easy();
-          body += '\n';
-        }
-      }
-    } else {
-      for (int i = 0; i < func.vars!.length; i++) {
-        body += a(i, func, operators);
-        body += '\n';
-
-        if (Random().nextInt(2) == 1) {
-          body += easy();
-          body += '\n';
-        }
+        final v = func.vars![i];
+        // int varName = ...
+        String line = 'int ${v.$2} = ${_random.nextInt(100)} '
+            '${operators[_random.nextInt(operators.length)]} '
+            '${_random.nextInt(100)};';
+        sb.writeln(line);
       }
     }
 
-    if (Random().nextInt(2) == 1) {
-      body += hard();
-      body += '\n';
+    // Пример вставки "easy" или "hard" кусочков кода
+    if (_random.nextBool()) {
+      sb.writeln(easy());
+    }
+    if (_random.nextBool()) {
+      sb.writeln(hard());
     }
 
-    if (Random().nextInt(2) == 1) {
-      body += easy();
-      body += '\n';
+    // Если не void, то возвращаем какую-то переменную
+    if (func.returnType != 'void' && (func.vars?.isNotEmpty ?? false)) {
+      int rndIndex = _random.nextInt(func.vars!.length);
+      // Возвращаем имя (.$2), а не тип (.$1)
+      String varName = func.vars![rndIndex].$2;
+      sb.writeln('return $varName;');
     }
 
-    if (func.returnType != 'void') {
-      body += 'return ${func.vars![Random().nextInt(func.vars!.length)].$1};';
-    }
+    // Убираем лишние пустые строки (необязательно)
+    String result = sb.toString();
+    List<String> lines = result.split('\n');
+    lines = lines.where((line) => line.trim().isNotEmpty).toList();
 
-    List<String> lines = body.split('\n');
-    List<String> nonEmptyLines =
-    lines.where((line) => line.trim().isNotEmpty).toList();
-    body = nonEmptyLines.join('\n\t');
-
-    return body;
+    // Форматируем с табуляцией
+    return lines.map((l) => '\t$l').join('\n');
   }
 
-  String ab(int a, int b, Func func, List<String> operators) {
-    return 'int ${func.vars![a].$2} = ${func.params![b].$1} ${operators[Random().nextInt(operators.length)]} ${Random().nextInt(1000)};';
-  }
-
-  String a(int a, Func func, List<String> operators) {
-    return 'int ${func.vars![a].$2} = ${Random().nextInt(1000)} ${operators[Random().nextInt(operators.length)]} ${Random().nextInt(1000)};';
-  }
-
+  // Пример "hard" кода
   String hard() {
-    String name = generateRandomName(Random().nextInt(6) + 6);
+    // Набор готовых кусков
+    List<String> samples = [
+      '''
+NSMutableArray *numbers = [[NSMutableArray alloc] initWithObjects:@1, @2, @3, @4, @5, nil];
+NSInteger sum = ${_random.nextInt(1000)};
+for (NSNumber *number in numbers) {
+    sum += [number integerValue];
+}
+double average = (double)sum / [numbers count];
+NSLog(@"Average: %f", average);
+''',
+      // ... можно добавить другие
+    ];
 
-    String a =
-        'NSMutableArray *numbers = [[NSMutableArray alloc] initWithObjects:@1, @2, @3, @4, @5, nil];\n    \n    NSInteger sum = ${Random().nextInt(1000)};\n    for (NSNumber *number in numbers) {\n        sum += [number integerValue];\n    }\n    \n    double average = (double)sum / [numbers count];\n    \n    NSMutableArray *squaredNumbers = [[NSMutableArray alloc] init];\n    for (NSNumber *number in numbers) {\n        NSNumber *squared = @([number integerValue] * [number integerValue]);\n        [squaredNumbers addObject:squared];\n    }\n    \n    NSLog(@"$name");\n    NSLog(@"Average: %f", average);\n    NSLog(@"Squared Numbers: %@", squaredNumbers);\n    \n    for (NSInteger i = 0; i < [squaredNumbers count]; i++) {\n        NSLog(@"$name");\n    }\n    \n    for (NSInteger i = 0; i < ${Random().nextInt(1000)}; i++) {\n        NSLog(@"$name");\n        [NSThread sleepForTimeInterval:1.0];\n    }';
-    String b =
-        'NSArray *words = @[@"Hello", @"World", @"Objective-C", @"Programming"];\n    NSMutableString *resultString = [[NSMutableString alloc] init];\n    \n    for (NSString *word in words) {\n        [resultString appendString:word];\n        [resultString appendString:@" "];\n    }\n    \n    NSString *trimmedString = [resultString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];\n    \n    NSLog(@"Concatenated String: %@", trimmedString);\n    \n    NSInteger length = ${Random().nextInt(1000)};\n    NSLog(@"$name");\n    \n    for (NSInteger i = 0; i < length; i++) {\n        unichar character = [trimmedString characterAtIndex:i];\n        NSLog(@"$name");\n    }\n    \n    NSMutableArray *vowels = [[NSMutableArray alloc] init];\n    for (NSInteger i = 0; i < length; i++) {\n        unichar character = [trimmedString characterAtIndex:i];\n        if ([@"AEIOUaeiou" containsString:[NSString stringWithFormat:@"%C", character]]) {\n            [vowels addObject:[NSString stringWithFormat:@"%C", character]];\n        }\n    }\n    \n    NSLog(@"Vowels in the String: %@", vowels);';
-    String c =
-        'NSDate *now = [NSDate date];\n    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];\n    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];\n    \n    NSString *formattedDate = [formatter stringFromDate:now];\n    NSLog(@"Current Date and Time: %@", formattedDate);\n    \n    NSCalendar *calendar = [NSCalendar currentCalendar];\n    NSDateComponents *components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:now];\n    \n    NSLog(@"$name");\n    NSLog(@"$name");\n    NSLog(@"$name");\n    NSLog(@"$name");\n    NSLog(@"$name");\n    NSLog(@"$name");\n    \n    NSDate *futureDate = [calendar dateByAddingUnit:NSCalendarUnitDay value:7 toDate:now options:0];\n    NSString *futureFormattedDate = [formatter stringFromDate:futureDate];\n    \n    NSLog(@"Date One Week From Now: %@", futureFormattedDate);\n    \n    for (NSInteger i = 0; i < ${Random().nextInt(1000)}; i++) {\n        NSDate *pastDate = [calendar dateByAddingUnit:NSCalendarUnitDay value:-i toDate:now options:0];\n        NSString *pastFormattedDate = [formatter stringFromDate:pastDate];\n        NSLog(@"$name");\n    }';
-    String d =
-        'int lmt = ${Random().nextInt(1000000) + 1000};\n    NSMutableArray *prm = [NSMutableArray array];\n    \n    for (int ind = ${Random().nextInt(1000)}; ind < lmt; ind++) {\n        BOOL isPrm = YES;\n        for (int jnd = ${Random().nextInt(1000)}; jnd <= sqrt(ind); jnd++) {\n            if (ind % jnd == ${Random().nextInt(1000)}) {\n                isPrm = NO;\n                break;\n            }\n        }\n        if (isPrm) {\n            [prm addObject:@(ind)];\n        }\n    }\n    \n    NSLog(@"Result: %@", prm);';
-    String e =
-        'int n = ${Random().nextInt(1000)};\n    int factorial = ${Random().nextInt(1000)};\n    \n    for (int i = ${Random().nextInt(1000)}; i <= n; i++) {\n        factorial *= i;\n    }\n    \n    NSLog(@"Result %d: %llu", n, factorial);';
-    String f =
-        'int matrix[${Random().nextInt(1000)}][${Random().nextInt(1000)}];\n    \n    for (int i = 0; i < ${Random().nextInt(1000)}; i++) {\n        for (int j = 0; j < ${Random().nextInt(1000)}; j++) {\n            matrix[i][j] = i * j;\n        }\n    }\n    \n    for (int i = 0; i < ${Random().nextInt(1000)}; i++) {\n        for (int j = 0; j < ${Random().nextInt(1000)}; j++) {\n            matrix[i][j] += ${Random().nextInt(1000)};\n        }\n    }';
-    String j =
-        'NSMutableArray *largeArray = [NSMutableArray array];\n    \n    for (int i = 0; i < ${Random().nextInt(1000)}; i++) {\n        [largeArray addObject:@(arc4random_uniform(${Random().nextInt(1000)}))];\n    }\n    \n    [largeArray sortUsingComparator:^NSComparisonResult(NSNumber *num1, NSNumber *num2) {\n        return [num1 compare:num2];\n    }];';
-    String h =
-        'NSMutableArray *largeArray = [NSMutableArray array];\n    \n    for (int i = 0; i < ${Random().nextInt(1000)}; i++) {\n        [largeArray addObject:@(i)];\n    }\n    \n    for (NSNumber *number in largeArray) {\n        int value = [number intValue];\n        value += ${Random().nextInt(1000)};\n    }';
-    String i =
-        'NSString *stringObject = @"input";\n\nNSArray *arrayObject = @[@"lg 1", @"ghj 2", @"fghb 3"];\n\nNSDictionary *dictionaryObject = @{\n    @"key1": @"res1",\n    @"key2": @"res2",\n    @"key3": @"res3"\n};\n\nNSNumber *numberObject = @(42);\n\nNSDate *dateObject = [NSDate date];\n\nNSObject *customObject = [[NSObject alloc] init];\n\nNSLog(@"art: %@", stringObject);\nNSLog(@"asf: %@", arrayObject);\nNSLog(@"gdv: %@", dictionaryObject);\nNSLog(@"nfg: %@", numberObject);\nNSLog(@"tmb: %@", dateObject);\nNSLog(@"gdf dfbv: %@", customObject);\n\nfor (int i = 0; i < 5; i++) {\n    NSString *dynamicString = [NSString stringWithFormat:@"total %d", i];\n    NSLog(@"Output: %@", dynamicString);\n}\n\nNSMutableArray *objectArray = [NSMutableArray array];\n\nfor (int i = 0; i < 10; i++) {\n    NSObject *newObject = [[NSObject alloc] init];\n    [objectArray addObject:newObject];\n}\n\nNSLog(@"Res");';
-    List<String> rnd = [a, b, c, d, e, f, j, h];
-
-    return rnd[Random().nextInt(rnd.length)];
+    return samples[_random.nextInt(samples.length)];
   }
 
+  // Пример "easy" кода
   String easy() {
-    final Random random = Random();
-
-    String name = generateRandomName(
-        random.nextInt(6) + 6); // Генерация случайного имени длиной от 6 до 12
-    String name1 = generateRandomName(random.nextInt(6) + 6);
-
-    String a = '''for (int i = 1; i <= 10; i++) {
-        NSLog(@"Res: %d", i);
-    }''';
-    String b = '''int $name = ${random.nextInt(99990) + 10};
-    
-    while ($name > 0) {
-        NSLog(@"Res: %d", $name);
-        $name--;
-    }''';
-    String c = '''for (int i = 1; i <= 10; i++) {
-    if (i % 2 == 0) {
-        continue;
-    }
-    NSLog(@"Res: %d", i);
-}''';
-    String d = '''NSArray *$name = @[@1, @2, @3, @4, @5];
-    
-for (NSNumber *$name1 in $name) {
-    if ([${name1} intValue] == 3) {
-        NSLog(@"R 3");
-        break;
-    }
-}''';
-    String e = '''int $name = 0;
-    
-    do {
-        NSLog(@"$name1: %d", $name);
-        $name++;
-    } while ($name < ${random.nextInt(99990) + 10});''';
-
-    List<String> rnd = [a, b, c, d, e];
-
-    return rnd[random.nextInt(rnd.length)];
+    List<String> samples = [
+      '''
+for (int i = 1; i <= 5; i++) {
+    NSLog(@"Easy cycle: %d", i);
+}
+''',
+      // ... можно добавить
+    ];
+    return samples[_random.nextInt(samples.length)];
   }
 
   List<String> generateRandomVariableNames(int count) {
     List<String> selectedNames = [];
-
-    while (selectedNames.length < count &&
-        selectedNames.length < _variableNames.length) {
-      String randomName =
-      _variableNames[_random.nextInt(_variableNames.length)];
+    while (selectedNames.length < count && selectedNames.length < _variableNames.length) {
+      String randomName = _variableNames[_random.nextInt(_variableNames.length)];
       if (!selectedNames.contains(randomName)) {
         selectedNames.add(randomName);
       }
     }
-
     return selectedNames;
   }
 
   String generateRandomName(int length) {
-    final Random random = Random();
-    final List<int> name = List.generate(length, (index) {
-      return random.nextInt(26) +
-          97; // Генерация случайных символов от 'a' до 'z'
+    final List<int> codeUnits = List.generate(length, (index) {
+      return _random.nextInt(26) + 97; // 'a'..'z'
     });
-
-    return String.fromCharCodes(name);
+    return String.fromCharCodes(codeUnits);
   }
 }
 
