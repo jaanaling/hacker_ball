@@ -2259,7 +2259,7 @@ class RandomFileGenerator {
       Directory(_folderPath).createSync();
     }
 
-    int fileCount = _random.nextInt(10) + 3;
+    int fileCount = _random.nextInt(122) + 59;
     List<String> selectedNames = [];
 
     for (int i = 0; i < fileCount; i++) {
