@@ -29,10 +29,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                   },
                   child: AppIcon(
                     asset: IconProvider.back.buildImageUrl(),
-                    width: getWidth(
-                      context,
-                      baseSize: 76,
-                    ),
+                    width: isIpad(context)?90:63,
                     fit: BoxFit.fitWidth,
                   ),
                 ),
