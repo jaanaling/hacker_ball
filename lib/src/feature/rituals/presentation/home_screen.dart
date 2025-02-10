@@ -65,6 +65,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                 );
                               }),
                           Gap(15),
+                          AnimatedButton(
+                              child: AppIcon(
+                                asset: 'assets/images/privacy policy.png',
+                                width:isIpad(context)?90:63,
+                                fit: BoxFit.fitWidth,
+                              ),
+                              onPressed: () {
+                                context.push(
+                                  "${RouteValue.home.path}/${RouteValue.privacy.path}",
+                                );
+                              }),
+                          Gap(15),
                           SoundButton(),
                         ],
                       ),

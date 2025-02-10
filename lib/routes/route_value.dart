@@ -20,6 +20,9 @@ enum RouteValue {
   game(
     path: 'game',
   ),
+  privacy(
+    path: 'privacy',
+  ),
 
   achievements(
     path: 'achievements',

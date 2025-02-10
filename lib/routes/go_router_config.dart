@@ -12,6 +12,7 @@ import 'package:haker_ball/src/feature/rituals/presentation/initial_screen.dart'
 import 'package:haker_ball/src/feature/rituals/presentation/select_screen.dart';
 
 import '../src/feature/rituals/model/article.dart';
+import '../src/feature/rituals/presentation/privacy_screen.dart';
 import '../src/feature/splash/presentation/screens/splash_screen.dart';
 import 'root_navigation_screen.dart';
 import 'route_value.dart';
@@ -59,6 +60,14 @@ GoRouter buildGoRouter = GoRouter(
                       },
                     ),
                   ],
+                ),
+                GoRoute(
+                  path: RouteValue.privacy.path,
+                  pageBuilder: (BuildContext context, GoRouterState state) {
+                    return NoTransitionPage(
+                        child: PrivacyPolicyScreen()
+                    );
+                  },
                 ),
                 GoRoute(
                   path: RouteValue.achievements.path,
