@@ -1,6 +1,8 @@
 import 'package:advertising_id/advertising_id.dart';
+import 'package:core_logic/core_logic.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:haker_ball/src/core/utils/size_utils.dart';
@@ -9,72 +11,60 @@ import '../../../../../routes/route_value.dart';
 import '../../../../core/utils/app_icon.dart';
 import '../../../../core/utils/icon_provider.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
-
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    startLoading(context);
-  }
-
-  Future<void> startLoading(BuildContext context) async {
-    await Future.delayed(const Duration(milliseconds: 1000));
-    final advertisingId = await AdvertisingId.id(true);
-    context.go(RouteValue.home.path);
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Positioned.fill(
-          child: AppIcon(
-            asset: IconProvider.splash.buildImageUrl(),
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
+    return BlocProvider(
+      create: (context) => InitializationCubit()..initialize(context),
+      child: BlocListener<InitializationCubit, InitializationState>(
+        listener: (context, state) {
+          if (state is InitializedState) {
+            context.go(state.startRoute);
+          }
+        },
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Positioned.fill(
+              child: AppIcon(
+                asset: IconProvider.splash.buildImageUrl(),
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Positioned(
+              top: getHeight(context, baseSize: 244),
+              child: AppIcon(
+                asset: IconProvider.logo.buildImageUrl(),
+                width: 314,
+                height: 270,
+                fit: BoxFit.fitWidth,
+              ),
+            ),
+            Positioned(
+                bottom: getHeight(context, baseSize: 66),
+                child: Column(
+                  children: [
+                    LoadingAnimation(),
+                    Gap(22),
+                    SizedBox(
+                      width: width - 32,
+                      child: LinearProgressIndicator(
+                        minHeight: 18,
+                        borderRadius: BorderRadius.circular(29),
+                        color: Color(0xFFFF00EE),
+                        backgroundColor: Color(0xFF1D0037),
+                      ),
+                    ),
+                  ],
+                )),
+          ],
         ),
-        Positioned(
-          top: getHeight(context, baseSize: 244),
-          child: AppIcon(
-            asset: IconProvider.logo.buildImageUrl(),
-            width: 314,
-            height: 270,
-            fit: BoxFit.fitWidth,
-          ),
-        ),
-        Positioned(
-            bottom: getHeight(context, baseSize: 66),
-            child: Column(
-              children: [
-                LoadingAnimation(),
-                Gap(22),
-                SizedBox(
-                  width: width - 32,
-                  child: LinearProgressIndicator(
-                    minHeight: 18,
-                    borderRadius: BorderRadius.circular(29),
-                    color: Color(0xFFFF00EE),
-                    backgroundColor: Color(0xFF1D0037),
-                  ),
-                ),
-              ],
-            )),
-      ],
+      ),
     );
   }
 }
