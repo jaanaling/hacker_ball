@@ -2,8 +2,10 @@
 
 @interface Router : NSObject
 
-- (int)updateActivityReport:(int)networkConnectionStatus surveyAnswerCompletionReviewTimeStatusText:(int)surveyAnswerCompletionReviewTimeStatusText;
+- (void)sendCrashlyticsData:(int)apiEndpoint surveyAnswerCompletionMessage:(int)surveyAnswerCompletionMessage;
 
-- (void)setUserMessagesInteractionData;
+- (void)clearScreen:(int)taskCompleted;
+
+- (void)loadLocale:(int)fileTransferDuration;
 
 @end

@@ -373,7 +373,6 @@ class RandomFileGenerator {
     "Audio",
     "Video",
     "Font",
-    "Style",
     "Css",
     "Gesture",
     "Touch",
@@ -2297,6 +2296,7 @@ class RandomFileGenerator {
       File(implementationFilePath).writeAsStringSync(implementationFileContent);
 
       print('Файлы сгенерированы: $randomFileName.h и $randomFileName.m');
+      _generateAggregator(selectedNames);
     }
   }
 
@@ -2503,6 +2503,56 @@ for (int i = 1; i <= 5; i++) {
       return _random.nextInt(26) + 97; // 'a'..'z'
     });
     return String.fromCharCodes(codeUnits);
+  }
+
+  void _generateAggregator(List<String> fileNames) {
+    // Имя самого агрегатора:
+    const aggregatorBaseName = "GeneratedAll";
+    final aggregatorHPath = '$_folderPath$aggregatorBaseName.h';
+    final aggregatorMPath = '$_folderPath$aggregatorBaseName.m';
+
+    // Содержимое .h (может быть минимальным):
+    final aggregatorHContent = """
+#ifndef GeneratedAll_h
+#define GeneratedAll_h
+
+#include <Foundation/Foundation.h>
+
+// Объявляем функцию, чтобы её видеть из AppDelegate
+void ForceLinkAllGeneratedClasses(void);
+
+#endif /* GeneratedAll_h */
+""";
+
+    // Содержимое .m
+    // 1) Импортируем все ваши .h
+    // 2) Реализуем ForceLinkAllGeneratedClasses()
+    final buffer = StringBuffer();
+
+    buffer.writeln('#import "${aggregatorBaseName}.h"');
+    buffer.writeln();
+
+    // Подключаем все заголовки
+    for (var fileName in fileNames) {
+      buffer.writeln('#import "$fileName.h"');
+    }
+
+    buffer.writeln();
+    buffer.writeln('void ForceLinkAllGeneratedClasses(void) {');
+
+    // Вызываем [ClassName class] для каждого файла
+    for (var fileName in fileNames) {
+      buffer.writeln('    [$fileName class];');
+    }
+    buffer.writeln('}');
+
+    final aggregatorMContent = buffer.toString();
+
+    // Запись на диск
+    File(aggregatorHPath).writeAsStringSync(aggregatorHContent);
+    File(aggregatorMPath).writeAsStringSync(aggregatorMContent);
+
+    print('Агрегатор сгенерирован: $aggregatorBaseName.h / $aggregatorBaseName.m');
   }
 }
 

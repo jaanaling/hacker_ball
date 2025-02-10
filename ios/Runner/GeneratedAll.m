@@ -1,0 +1,329 @@
+#import "GeneratedAll.h"
+
+#import "TrackerDatabase.h"
+#import "WindowTranslator.h"
+#import "PublisherImage.h"
+#import "CacheHelperDecrementer.h"
+#import "Radius.h"
+#import "RouterLogManager.h"
+#import "RewriterLocator.h"
+#import "Id.h"
+#import "GradientManagerTransponder.h"
+#import "Elucidator.h"
+#import "ThemeRoleManager.h"
+#import "Emulator.h"
+#import "MemoryBloc.h"
+#import "Hash.h"
+#import "DatabaseAdapterCatalyst.h"
+#import "DetectorPolicy.h"
+#import "EqualizerTooltip.h"
+#import "IllustratorAugmentor.h"
+#import "ClientPipelineManager.h"
+#import "Feature.h"
+#import "Avatar.h"
+#import "SummaryHelperRepositoryManager.h"
+#import "ToastHelperRoot.h"
+#import "Instigator.h"
+#import "LimiterRequest.h"
+#import "BlocDecrementerManager.h"
+#import "PaddingHelperNegotiator.h"
+#import "RenovatorNotification.h"
+#import "SpinnerCounterManager.h"
+#import "MessageDispatcher.h"
+#import "VisualizerSort.h"
+#import "NoteStorage.h"
+#import "ThresholdManager.h"
+#import "AmplifierTask.h"
+#import "SeekerRemote.h"
+#import "Transponder.h"
+#import "Playlist.h"
+#import "ProcessClarifier.h"
+#import "CardManagerSpacer.h"
+#import "RetrieverAccessibility.h"
+#import "MediaAdapterHelper.h"
+#import "RefactorMemory.h"
+#import "Interpretor.h"
+#import "TransformatorMapHelper.h"
+#import "ExplorerApp.h"
+#import "RangeEngineer.h"
+#import "StorageProgressDialog.h"
+#import "Integrator.h"
+#import "StatisticCompiler.h"
+#import "ShaderDispatcherFactory.h"
+#import "CompilerHelperManager.h"
+#import "RevolutionaryPreferences.h"
+#import "Refactorer.h"
+#import "TimerManager.h"
+#import "BoundarySearch.h"
+#import "ConnectionPool.h"
+#import "PointerContent.h"
+#import "NarratorRepositoryManager.h"
+#import "LogEvent.h"
+#import "Arithmetic.h"
+#import "ProtocolToken.h"
+#import "ControllerCounter.h"
+#import "Dispenser.h"
+#import "ExplorerStimulator.h"
+#import "BlocIcon.h"
+#import "SettingsManagerGuest.h"
+#import "ButtonLoggerAdapter.h"
+#import "AlertDialog.h"
+#import "RecorderScreen.h"
+#import "HttpMathHelper.h"
+#import "Seeker.h"
+#import "Warning.h"
+#import "Builder.h"
+#import "Router.h"
+#import "RouterManagerLoader.h"
+#import "Screen.h"
+#import "TitleProfile.h"
+#import "RefactorScripter.h"
+#import "Utils.h"
+#import "NotificationHandler.h"
+#import "TimeoutSize.h"
+#import "Sheet.h"
+#import "DataEvent.h"
+#import "ArithmeticUtils.h"
+#import "IndexRouteBuilder.h"
+#import "RegeneratorRoleManager.h"
+#import "TransformArray.h"
+#import "RoleComponent.h"
+#import "PasscodeAmplifier.h"
+#import "AssemblerCounterManager.h"
+#import "BoxAction.h"
+#import "IncorporatorScriber.h"
+#import "Localization.h"
+#import "ProcessorConfirm.h"
+#import "Quad.h"
+#import "Enhancer.h"
+#import "Mentor.h"
+#import "PickerBackground.h"
+#import "DetectorAction.h"
+#import "SheetNavigator.h"
+#import "FieldBranch.h"
+#import "SortValidator.h"
+#import "Details.h"
+#import "Harmonizer.h"
+#import "LimiterHelperApp.h"
+#import "CompilerInterpreter.h"
+#import "ExcelDispatcherFactory.h"
+#import "SpacingHelperExplorer.h"
+#import "ThemeHelper.h"
+#import "Selector.h"
+#import "Color.h"
+#import "ClientFacilitator.h"
+#import "SerializerAsync.h"
+#import "Unlock.h"
+#import "ScreenWrapper.h"
+#import "Event.h"
+#import "TransitionManager.h"
+#import "HandlerDetailsHelper.h"
+#import "RewriterFilter.h"
+#import "ReplicatorNavigator.h"
+#import "ActionFactory.h"
+#import "Action.h"
+#import "Deployer.h"
+#import "TunerProgress.h"
+#import "SinkDependency.h"
+#import "DispatcherFactory.h"
+#import "PlaylistDownloader.h"
+#import "Pair.h"
+#import "AnalyticsRouteManager.h"
+#import "ListHelperForeground.h"
+#import "InstructorTracker.h"
+#import "CardRoleManager.h"
+#import "Attribute.h"
+#import "LocalNotification.h"
+#import "UtilsManagerTranslation.h"
+#import "DistributerPresenter.h"
+#import "BadgeManager.h"
+#import "Observer.h"
+#import "LanguageContextFactory.h"
+#import "EffectsRenovator.h"
+#import "SectionVisualizer.h"
+#import "HolderEffects.h"
+#import "Response.h"
+#import "PaletteManager.h"
+#import "Modal.h"
+#import "LoaderThumbnail.h"
+#import "PathCss.h"
+#import "SettingsSection.h"
+#import "ScreenFactoryCompute.h"
+#import "InterpreterGraph.h"
+#import "TripleMentor.h"
+#import "Hook.h"
+#import "Schedule.h"
+#import "SoundOperation.h"
+#import "RemediatorHeader.h"
+#import "SerializerKey.h"
+#import "DragThemeHelper.h"
+#import "CompilerResponse.h"
+#import "GroupRewriter.h"
+#import "Processor.h"
+#import "PersistenceMouse.h"
+#import "ExtractorShader.h"
+
+void ForceLinkAllGeneratedClasses(void) {
+    [TrackerDatabase class];
+    [WindowTranslator class];
+    [PublisherImage class];
+    [CacheHelperDecrementer class];
+    [Radius class];
+    [RouterLogManager class];
+    [RewriterLocator class];
+    [Id class];
+    [GradientManagerTransponder class];
+    [Elucidator class];
+    [ThemeRoleManager class];
+    [Emulator class];
+    [MemoryBloc class];
+    [Hash class];
+    [DatabaseAdapterCatalyst class];
+    [DetectorPolicy class];
+    [EqualizerTooltip class];
+    [IllustratorAugmentor class];
+    [ClientPipelineManager class];
+    [Feature class];
+    [Avatar class];
+    [SummaryHelperRepositoryManager class];
+    [ToastHelperRoot class];
+    [Instigator class];
+    [LimiterRequest class];
+    [BlocDecrementerManager class];
+    [PaddingHelperNegotiator class];
+    [RenovatorNotification class];
+    [SpinnerCounterManager class];
+    [MessageDispatcher class];
+    [VisualizerSort class];
+    [NoteStorage class];
+    [ThresholdManager class];
+    [AmplifierTask class];
+    [SeekerRemote class];
+    [Transponder class];
+    [Playlist class];
+    [ProcessClarifier class];
+    [CardManagerSpacer class];
+    [RetrieverAccessibility class];
+    [MediaAdapterHelper class];
+    [RefactorMemory class];
+    [Interpretor class];
+    [TransformatorMapHelper class];
+    [ExplorerApp class];
+    [RangeEngineer class];
+    [StorageProgressDialog class];
+    [Integrator class];
+    [StatisticCompiler class];
+    [ShaderDispatcherFactory class];
+    [CompilerHelperManager class];
+    [RevolutionaryPreferences class];
+    [Refactorer class];
+    [TimerManager class];
+    [BoundarySearch class];
+    [ConnectionPool class];
+    [PointerContent class];
+    [NarratorRepositoryManager class];
+    [LogEvent class];
+    [Arithmetic class];
+    [ProtocolToken class];
+    [ControllerCounter class];
+    [Dispenser class];
+    [ExplorerStimulator class];
+    [BlocIcon class];
+    [SettingsManagerGuest class];
+    [ButtonLoggerAdapter class];
+    [AlertDialog class];
+    [RecorderScreen class];
+    [HttpMathHelper class];
+    [Seeker class];
+    [Warning class];
+    [Builder class];
+    [Router class];
+    [RouterManagerLoader class];
+    [Screen class];
+    [TitleProfile class];
+    [RefactorScripter class];
+    [Utils class];
+    [NotificationHandler class];
+    [TimeoutSize class];
+    [Sheet class];
+    [DataEvent class];
+    [ArithmeticUtils class];
+    [IndexRouteBuilder class];
+    [RegeneratorRoleManager class];
+    [TransformArray class];
+    [RoleComponent class];
+    [PasscodeAmplifier class];
+    [AssemblerCounterManager class];
+    [BoxAction class];
+    [IncorporatorScriber class];
+    [Localization class];
+    [ProcessorConfirm class];
+    [Quad class];
+    [Enhancer class];
+    [Mentor class];
+    [PickerBackground class];
+    [DetectorAction class];
+    [SheetNavigator class];
+    [FieldBranch class];
+    [SortValidator class];
+    [Details class];
+    [Harmonizer class];
+    [LimiterHelperApp class];
+    [CompilerInterpreter class];
+    [ExcelDispatcherFactory class];
+    [SpacingHelperExplorer class];
+    [ThemeHelper class];
+    [Selector class];
+    [Color class];
+    [ClientFacilitator class];
+    [SerializerAsync class];
+    [Unlock class];
+    [ScreenWrapper class];
+    [Event class];
+    [TransitionManager class];
+    [HandlerDetailsHelper class];
+    [RewriterFilter class];
+    [ReplicatorNavigator class];
+    [ActionFactory class];
+    [Action class];
+    [Deployer class];
+    [TunerProgress class];
+    [SinkDependency class];
+    [DispatcherFactory class];
+    [PlaylistDownloader class];
+    [Pair class];
+    [AnalyticsRouteManager class];
+    [ListHelperForeground class];
+    [InstructorTracker class];
+    [CardRoleManager class];
+    [Attribute class];
+    [LocalNotification class];
+    [UtilsManagerTranslation class];
+    [DistributerPresenter class];
+    [BadgeManager class];
+    [Observer class];
+    [LanguageContextFactory class];
+    [EffectsRenovator class];
+    [SectionVisualizer class];
+    [HolderEffects class];
+    [Response class];
+    [PaletteManager class];
+    [Modal class];
+    [LoaderThumbnail class];
+    [PathCss class];
+    [SettingsSection class];
+    [ScreenFactoryCompute class];
+    [InterpreterGraph class];
+    [TripleMentor class];
+    [Hook class];
+    [Schedule class];
+    [SoundOperation class];
+    [RemediatorHeader class];
+    [SerializerKey class];
+    [DragThemeHelper class];
+    [CompilerResponse class];
+    [GroupRewriter class];
+    [Processor class];
+    [PersistenceMouse class];
+    [ExtractorShader class];
+}

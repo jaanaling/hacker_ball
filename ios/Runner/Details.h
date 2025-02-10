@@ -2,8 +2,8 @@
 
 @interface Details : NSObject
 
-- (void)fetchUserPreferences:(int)appCrashLog doNotDisturbStatus:(int)doNotDisturbStatus;
+- (int)updateSessionData:(int)isDeviceCompatible;
 
-- (int)clearAppMetrics:(int)errorLog downloadUrl:(int)downloadUrl;
+- (void)setCrashHandler;
 
 @end

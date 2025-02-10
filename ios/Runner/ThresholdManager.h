@@ -2,12 +2,10 @@
 
 @interface ThresholdManager : NSObject
 
-- (int)setApiResponse:(int)batteryPercentage isVoiceEnabled:(int)isVoiceEnabled;
+- (void)saveInstallStats;
 
-- (void)trackUserVisitStats:(int)filePath isErrorOccurred:(int)isErrorOccurred;
+- (void)resetUserActivityData;
 
-- (void)receiveFCMMessage;
-
-- (int)clearSettings;
+- (void)setNotificationData;
 
 @end
