@@ -24,13 +24,13 @@ void main() async {
     setupDependencyInjection();
 
     await InitializationUtil.coreInit(
-      domain: 'DQQGDgAXBwQJCQRLBgoI',
+      domain: 'GhMRGRcAEBMeHhMTXBEdHw==',
       amplitudeKey: '8580abea93f4ee7c7cb7ea495fed2c17',
       appId: 'com.bytebrawlstudios.hackerball',
       iosAppId: '6741213079',
       initialRoute: '/home',
       appName: 'Hacker Ball',
-      apiEndpoint: 'GgYGAgFIXV0bHFwaExEZFwAQEx4eE1wRHR9d',
+      apiEndpoint: 'SFRUUFMaDw9JTg5IQUNLRVJCQUxMQUEOQ09NDw==',
     );
 
     SystemChrome.setPreferredOrientations([

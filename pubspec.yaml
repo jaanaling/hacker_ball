@@ -25,7 +25,7 @@ dependencies:
   just_audio: ^0.9.44
   advertising_id: ^2.7.1
   core_logic:
-    path: ../core_logic-aso
+    path: ../core_logic_aso
 
 dev_dependencies:
   flutter_test:
